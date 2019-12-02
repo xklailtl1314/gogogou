@@ -24,6 +24,7 @@ export default {
   line-height: 140rpx;
   overflow: hidden;
   swiper {
+    height: 240rpx;
     swiper-item {
       image {
         width: 100%;
