@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 .swiper-wrap {
   padding: 0 20rpx;
-  line-height: 140rpx;
+  line-height: 40rpx;
   overflow: hidden;
   swiper {
     height: 240rpx;

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- 头部导航 -->
-    <HeaderBar></HeaderBar>
+    <HeaderBar :cateLink="cateLink" ></HeaderBar>
     <!-- 三栏口号 -->
     <Slogin></Slogin>
     <!-- 轮播 -->
@@ -20,6 +20,7 @@ import Category from '../../components/Category.vue' // 分类
 export default {
   data () {
     return {
+      cateLink: '../search/main',
       swiperItems: [
         '/static/images/1.jpg',
         '/static/images/2.jpg',

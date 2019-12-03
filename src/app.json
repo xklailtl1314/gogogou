@@ -1,12 +1,11 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/counter/main"
+    "pages/search/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-
     "navigationBarTextStyle": "black"
   }
 }

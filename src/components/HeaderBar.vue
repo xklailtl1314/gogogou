@@ -1,6 +1,6 @@
 <template>
   <div class="header-bar">
-    <navigator class="category" hover-class="none">
+    <navigator :url="cateLink" class="category" open-type="navigate" hover-class="none" >
       <image mode="widthFix" src="/static/images/category.png"/>
       <span>分类</span>
     </navigator>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-
+  props: ['cateLink']
 }
 </script>
 
