@@ -8,10 +8,10 @@
       <image mode="widthFix" src="/static/images/search.png"/>
       <input type="text" placeholder="行车记录仪" placeholder-style="color: #ccc">
     </navigator>
-    <navigator class="scan" hover-class="none">
+    <div class="scan" hover-class="none" @tap="sacnCode">
       <image mode="widthFix" src="/static/images/scan.png"/>
       <span>扫一扫</span>
-    </navigator>
+    </div>
     <navigator class="msg" hover-class="none">
       <image mode="widthFix" src="/static/images/msg.png"/>
       <span>消息</span>
@@ -21,7 +21,20 @@
 
 <script>
 export default {
-  props: ['cateLink']
+  props: ['cateLink'],
+  methods: {
+    // 扫一扫
+    sacnCode () {
+      wx.scanCode({
+        success (res) {
+          console.log(res)
+        },
+        fail () {
+          console.log('失败')
+        }
+      })
+    }
+  }
 }
 </script>
 
@@ -40,7 +53,7 @@ export default {
         width: 36rpx;
       }
       span {
-        padding-top: 10rpx;
+        padding-top: 6rpx;
         font-size: 24rpx;
         color: #ccc;
       }

@@ -1,11 +1,40 @@
 {
   "pages": [
-    "pages/search/main",
-    "pages/index/main"
+    "pages/index/main",
+    "pages/search/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#d81e06",
+    "list": [{
+      "pagePath": "pages/index/main",
+      "text": "精选",
+      "iconPath": "/static/images/bag.png",
+      "selectedIconPath": "/static/images/bag_active.png"
+    }, {
+      "pagePath": "pages/search/main",
+      "text": "发现",
+      "iconPath": "/static/images/fenlei.png",
+      "selectedIconPath": "/static/images/fenlei_active.png"
+    }, {
+      "pagePath": "pages/search/main",
+      "text": "喜欢",
+      "iconPath": "/static/images/like.png",
+      "selectedIconPath": "/static/images/like_active.png"
+    }, {
+      "pagePath": "pages/search/main",
+      "text": "购物车",
+      "iconPath": "/static/images/cart.png",
+      "selectedIconPath": "/static/images/cart_active.png"
+    }, {
+      "pagePath": "pages/search/main",
+      "text": "我",
+      "iconPath": "/static/images/my.png",
+      "selectedIconPath": "/static/images/my_active.png"
+    }]
   }
 }
