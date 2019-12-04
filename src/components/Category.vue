@@ -1,10 +1,13 @@
 <template>
   <div class="category">
     <div class="wrap">
-      <div class="item" v-for="(item,idx) in cate" :key="idx">
+      <navigator
+        class="item"
+        hover-class="none"
+        v-for="(item,idx) in cate" :key="idx" :url="item.link">
         <img :src="item.url">
         <span>{{item.name}}</span>
-      </div>
+      </navigator>
     </div>
   </div>
 </template>

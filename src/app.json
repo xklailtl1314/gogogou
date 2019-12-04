@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/main",
+    "pages/goodsList/main",
+    "pages/goodsShow/main",
     "pages/search/main"
   ],
   "window": {

@@ -28,16 +28,16 @@ export default {
         '/static/images/4.jpg'
       ],
       category: [
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'},
-        {url: '/static/images/5.jpg', name: '汽车汽配'}
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'},
+        {url: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main'}
       ]
     }
   },
