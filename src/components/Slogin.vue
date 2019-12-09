@@ -25,24 +25,24 @@ export default {
 
 <style lang="scss" scoped>
 .slogan {
-  padding: 20rpx 0;
+  padding: 40rpx 0 0;
   display: flex;
+  background-color: #fff;
   li {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
     image {
-      padding: 6rpx;
-      width: 16rpx;
-      height: 16rpx;
-      background-color: #f40;
+      width: 25rpx;
+      height: 25rpx;
+      background-color: #b61c65;
       border-radius: 50%;
     }
     span {
-      padding-left: 15rpx;
-      font-size: 24rpx;
-      color: #f40;
+      padding-left: 14rpx;
+      font-size: 22rpx;
+      color: #b61c65;
     }
   }
 }
