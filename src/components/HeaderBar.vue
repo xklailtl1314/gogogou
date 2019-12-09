@@ -4,18 +4,22 @@
       <image mode="widthFix" src="/static/images/category.png"/>
       <span>分类</span>
     </navigator>
+
     <navigator class="search" hover-class="none">
       <image mode="widthFix" src="/static/images/search.png"/>
-      <input type="text" placeholder="行车记录仪" placeholder-style="color: #ccc">
+      <span>行车记录仪</span>
     </navigator>
-    <div class="scan" hover-class="none" @tap="sacnCode">
-      <image mode="widthFix" src="/static/images/scan.png"/>
-      <span>扫一扫</span>
+
+    <div class="right">
+      <div class="scan" hover-class="none" @tap="sacnCode">
+        <image mode="widthFix" src="/static/images/scan.png"/>
+        <span>扫一扫</span>
+      </div>
+      <navigator class="msg" hover-class="none">
+        <image mode="widthFix" src="/static/images/msg.png"/>
+        <span>消息</span>
+      </navigator>
     </div>
-    <navigator class="msg" hover-class="none">
-      <image mode="widthFix" src="/static/images/msg.png"/>
-      <span>消息</span>
-    </navigator>
   </div>
 </template>
 
@@ -40,9 +44,10 @@ export default {
 
 <style lang="scss" scoped>
   .header-bar {
-    padding: 20rpx;
+    padding: 20rpx 30rpx 0;
     display: flex;
-    border-bottom: 1px solid #eee;
+    justify-content: space-between;
+    background-color: #fff;
     .scan,
     .msg,
     .search,
@@ -50,12 +55,15 @@ export default {
       display: flex;
       align-items: center;
       image {
-        width: 36rpx;
+        padding-top: 10rpx;
+        width: 30rpx;
+        height: 30rpx;
       }
       span {
-        padding-top: 6rpx;
-        font-size: 24rpx;
-        color: #ccc;
+        padding-top: 12rpx;
+        font-size: 20rpx;
+        line-height: 1;
+        color: #666;
       }
     }
     .scan,
@@ -64,24 +72,28 @@ export default {
       flex-direction: column;
     }
     .search {
-      margin: 0 20rpx;
-      flex: 1;
       position: relative;
-      font-size: 26rpx;
-      border-radius: 35rpx;
-      background-color: #f7f7f7;
-      overflow: hidden;
-
+      width: 480rpx;
+      height: 72rpx;
+      border-radius: 36rpx;
+      background-color: #eee;
       image {
         position: absolute;
         top: 50%;
-        left: 20rpx;
+        left: 22rpx;
         transform: translateY(-50%);
+        padding: 0;
+        width: 33rpx;
+        height: 33rpx;
       }
-      input {
-        padding-left: 66rpx;
-        width: 100%;
+      span {
+        padding: 0 0 0 76rpx;
+        font-size: 28rpx;
+        color: #cfcfcf;
       }
+    }
+    .right {
+      display: flex;
     }
     .msg {
       padding-left: 20rpx;
