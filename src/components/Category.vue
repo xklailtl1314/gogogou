@@ -23,15 +23,16 @@ export default {
 
 <style lang="scss" scoped>
 .category {
-  margin-top: 40rpx;
+  padding: 0 30rpx 22rpx;
   display: flex;
+  background-color: #fff;
   .wrap {
     display: flex;
     flex-flow: row wrap;
     align-content: flex-start;
     width: 100%;
     .item {
-      padding: 0 20rpx;
+      padding: 45rpx 10rpx 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -40,13 +41,15 @@ export default {
       // height: 50px;
       box-sizing: border-box;
       img {
-        width: 80rpx;
-        height: 80rpx;
+        width: 82rpx;
+        height: 82rpx;
         border-radius: 50%;
       }
       span {
-        padding: 10rpx 0;
-        font-size: 24rpx;
+        padding: 20rpx 0 0;
+        font-size: 26rpx;
+        line-height: 1;
+        color: #333;
       }
     }
   }
