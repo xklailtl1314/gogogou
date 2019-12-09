@@ -20,16 +20,17 @@ export default {
 
 <style lang="scss" scoped>
 .swiper-wrap {
-  padding: 0 20rpx;
-  line-height: 40rpx;
-  overflow: hidden;
+  padding: 20rpx 30rpx 0;
+  // line-height: 10rpx;
+  background-color: #fff;
   swiper {
-    height: 240rpx;
+    height: 306rpx;
+    width: 690rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
     swiper-item {
       image {
         width: 100%;
-        height: 100%;
-        border-radius: 10rpx;
       }
     }
   }
