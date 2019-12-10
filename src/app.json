@@ -3,7 +3,8 @@
     "pages/index/main",
     "pages/goodsList/main",
     "pages/goodsShow/main",
-    "pages/search/main"
+    "pages/search/main",
+    "pages/my/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,7 +34,7 @@
       "iconPath": "/static/images/cart.png",
       "selectedIconPath": "/static/images/cart_active.png"
     }, {
-      "pagePath": "pages/search/main",
+      "pagePath": "pages/my/main",
       "text": "我",
       "iconPath": "/static/images/my.png",
       "selectedIconPath": "/static/images/my_active.png"
