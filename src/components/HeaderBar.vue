@@ -1,23 +1,20 @@
 <template>
   <div class="header-bar">
     <navigator :url="cateLink" class="category" open-type="navigate" hover-class="none" >
-      <image mode="widthFix" src="/static/images/category.png"/>
-      <span>分类</span>
+      <i class="iconfont icon-fenlei"></i>
     </navigator>
 
-    <navigator class="search" hover-class="none">
-      <image mode="widthFix" src="/static/images/search.png"/>
+    <navigator :url="cateLink" class="search" hover-class="none">
+      <i class="iconfont icon-search1"></i>
       <span>行车记录仪</span>
     </navigator>
 
     <div class="right">
       <div class="scan" hover-class="none" @tap="sacnCode">
-        <image mode="widthFix" src="/static/images/scan.png"/>
-        <span>扫一扫</span>
+        <i class="iconfont icon-scan"></i>
       </div>
       <navigator class="msg" hover-class="none">
-        <image mode="widthFix" src="/static/images/msg.png"/>
-        <span>消息</span>
+        <i class="iconfont icon-i-message"></i>
       </navigator>
     </div>
   </div>
@@ -44,32 +41,37 @@ export default {
 
 <style lang="scss" scoped>
   .header-bar {
-    padding: 20rpx 30rpx 0;
+    padding: 20rpx 30rpx;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #b51c66;
     .scan,
     .msg,
     .search,
     .category {
       display: flex;
       align-items: center;
-      image {
-        padding-top: 10rpx;
-        width: 30rpx;
-        height: 30rpx;
-      }
-      span {
-        padding-top: 12rpx;
-        font-size: 20rpx;
+      i {
+        font-size: 40rpx;
         line-height: 1;
-        color: #666;
+        color: #fff;
+        &.icon-fenlei {
+          font-size: 48rpx;
+          // font-weight: 600;
+        }
+        &.icon-search1 {
+          position: absolute;
+          top: 50%;
+          left: 30rpx;
+          transform: translateY(-50%);
+          font-size: 22rpx;
+          color: #999;
+        }
+        &.icon-i-message {
+          font-size: 42rpx;
+        }
       }
-    }
-    .scan,
-    .msg,
-    .category {
-      flex-direction: column;
     }
     .search {
       position: relative;
@@ -77,19 +79,10 @@ export default {
       height: 72rpx;
       border-radius: 36rpx;
       background-color: #eee;
-      image {
-        position: absolute;
-        top: 50%;
-        left: 22rpx;
-        transform: translateY(-50%);
-        padding: 0;
-        width: 33rpx;
-        height: 33rpx;
-      }
       span {
-        padding: 0 0 0 76rpx;
-        font-size: 28rpx;
-        color: #cfcfcf;
+        padding: 0 0 0 74rpx;
+        font-size: 24rpx;
+        color: #999;
       }
     }
     .right {
