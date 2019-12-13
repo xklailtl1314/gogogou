@@ -25,9 +25,9 @@ export default {
 
 <style lang="scss" scoped>
 .slogan {
-  padding: 40rpx 0 0;
+  padding: 20rpx 0 0;
   display: flex;
-  background-color: #fff;
+  background-color: #b51c66;
   li {
     display: flex;
     align-items: center;
@@ -36,13 +36,13 @@ export default {
     image {
       width: 25rpx;
       height: 25rpx;
-      background-color: #b61c65;
+      background-color: #fff;
       border-radius: 50%;
     }
     span {
       padding-left: 14rpx;
       font-size: 22rpx;
-      color: #b61c65;
+      color: #fff;
     }
   }
 }
