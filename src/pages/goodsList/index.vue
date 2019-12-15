@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import util from '../../utils/index.js'
-import api from '../../../config/api.js'
+import util from '@/utils/index.js'
+import api from '@/../config/api.js'
 import mpButton from 'mpvue-weui/src/button'
 export default {
   data () {
@@ -42,12 +42,11 @@ export default {
   methods: {
     // 获取列表数据
     getGoodsList () {
-      util.request(api.GoodsList + '?pageindex=' + this.pageindex).then(res => {
-        console.log(res.status)
-        if (res.status === 0) {
-          this.message = this.message.concat(res.message)
-        }
-      })
+      // util.request(api.GoodsList + '?pageindex=' + this.pageindex).then(res => {
+      //   if (res.status === 0) {
+      //     this.message = this.message.concat(res.message)
+      //   }
+      // })
     },
     // 加载更多
     getMore () {
