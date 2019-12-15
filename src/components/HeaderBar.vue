@@ -1,6 +1,6 @@
 <template>
   <div class="header-bar">
-    <navigator :url="cateLink" class="category" open-type="navigate" hover-class="none" >
+    <navigator :url="cates" class="category" open-type="navigate" hover-class="none" >
       <i class="iconfont icon-fenlei"></i>
     </navigator>
 
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  props: ['cateLink'],
+  props: ['cateLink', 'cates'],
   methods: {
     // 扫一扫
     sacnCode () {
