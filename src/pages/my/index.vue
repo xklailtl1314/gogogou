@@ -7,23 +7,27 @@
         <span>授权并查看</span>
       </div>
       <navigator class="msg">
-        <img src="/static/images/msg.png">
+        <!-- <img src="/static/images/msg.png"> -->
+        <i class="iconfont icon-i-message"></i>
       </navigator>
     </div>
     <!-- 我的订单 -->
     <div class="my-order">
-      <div class="line">
-        <span class="title">我的订单</span>
-        <navigator class="link">
-          全部订单
-          <i class="iconfont icon-angle-right"></i>
-        </navigator>
-      </div>
-      <div class="step">
-        <navigator class="item" v-for="(item, idx) in oList" :key="idx">
-          <img :src="item.img_src">
-          <span>{{item.name}}</span>
-        </navigator>
+      <div class="bg"></div>
+      <div class="wrap">
+        <div class="line">
+          <span class="title">我的订单</span>
+          <navigator class="link">
+            全部订单
+            <i class="iconfont icon-angle-right"></i>
+          </navigator>
+        </div>
+        <div class="step">
+          <navigator class="item" v-for="(item, idx) in oList" :key="idx">
+            <img :src="item.img_src">
+            <span>{{item.name}}</span>
+          </navigator>
+        </div>
       </div>
     </div>
     <!-- 我的工具 -->
@@ -40,43 +44,14 @@
     </div>
     <!-- 猜你喜欢 -->
     <p class="divider-line">猜你喜欢</p>
-    <div class="two-clo-goods">
-      <navigator class="item">
-        <img src="/static/images/ad.jpg">
-        <div class="wrap">
-          <span class="title">日清合味道方便面整箱12杯开杯乐海鲜杯面泡面桶装速食刀剑神域</span>
-          <div class="line">
-            <div class="price"><span>￥</span>6.9</div>
-          </div>
-          <div class="sub"><del>￥12.5</del></div>
-        </div>
-      </navigator>
-      <navigator class="item">
-        <img src="/static/images/ad.jpg">
-        <div class="wrap">
-          <span class="title">日清合味道方便面整箱12杯开杯乐海鲜杯面泡面桶装速食刀剑神域</span>
-          <div class="line">
-            <div class="price"><span>￥</span>6.9</div>
-          </div>
-          <div class="sub"><del>￥12.5</del></div>
-        </div>
-      </navigator>
-      <navigator class="item">
-        <img src="/static/images/ad.jpg">
-        <div class="wrap">
-          <span class="title">日清合味道方便面整箱12杯开杯乐海鲜杯面泡面桶装速食刀剑神域</span>
-          <div class="line">
-            <div class="price"><span>￥</span>6.9</div>
-          </div>
-          <div class="sub"><del>￥12.5</del></div>
-        </div>
-      </navigator>
-    </div>
+    <!-- 两列布局 -->
+    <TwoColGoods :twoColGoods="twoColGoods"></TwoColGoods>
 
   </div>
 </template>
 
 <script>
+import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
 export default {
   data () {
     return {
@@ -91,8 +66,31 @@ export default {
         {img_src: '/static/images/icon_06.png', name: '优惠券'},
         {img_src: '/static/images/icon_07.png', name: '我的地址'},
         {img_src: '/static/images/icon_08.png', name: '咕咕购客服'}
+      ],
+      twoColGoods: [ // 猜你喜欢商品列表
+        {
+          img_src: '/static/images/ad.jpg',
+          title: '日清合味道方便面整箱12杯开杯乐海鲜杯面泡面桶装速食刀剑神域',
+          price: '6.9',
+          oldPrice: '12.5'
+        },
+        {
+          img_src: '/static/images/ad.jpg',
+          title: '日清合味道方便面整箱12杯开杯乐海鲜杯面泡面桶装速食刀剑神域',
+          price: '6.9',
+          oldPrice: '12.5'
+        },
+        {
+          img_src: '/static/images/ad.jpg',
+          title: '日清合味道方便面整箱12杯开杯乐海鲜杯面泡面桶装速食刀剑神域',
+          price: '6.9',
+          oldPrice: '12.5'
+        }
       ]
     }
+  },
+  components: {
+    TwoColGoods
   }
 }
 </script>
@@ -108,7 +106,7 @@ page {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #b51c66;
     .wrap {
       display: flex;
       align-items: center;
@@ -121,55 +119,72 @@ page {
       span {
         margin-left: 24rpx;
         font-size: 30rpx;
+        color: #fff;
       }
     }
     .msg {
-      img {
-        width: 30rpx;
-        height: 30rpx;
+      i {
+        font-size: 40rpx;
+        color: #fff;
       }
+      // img {
+      //   width: 30rpx;
+      //   height: 30rpx;
+      // }
     }
   }
   // 我的订单
   .my-order {
-    margin: 24rpx 30rpx 0;
-    border-radius: 10rpx;
-    background-color: #fff;
-    .line {
-      padding: 24rpx;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      line-height: 1;
-      border-radius: 8rpx;
-      border-bottom: 1rpx solid #eee;
-      .title {
-        font-size: 26rpx;
-      }
-      .link {
-        display: flex;
-        align-items: center;
-        font-size: 26rpx;
-      }
+    position: relative;
+    .bg {
+      position: absolute;
+      height: 160rpx;
+      width: 100%;
+      background-color: #b51c66;
     }
-    .step {
-      padding: 0 24rpx 24rpx;
-      margin-top: 48rpx;
-      display: flex;
-      flex-flow: row wrap;
-      align-content: flex-start;
-      .item {
+    .wrap {
+      position: relative;
+      margin: 0 30rpx 0;
+      background-color: #fff;
+      border-radius: 10rpx;
+      .line {
+        padding: 24rpx;
         display: flex;
         align-items: center;
-        flex-direction: column;
-        flex: 0 0 20%;
-        img {
-          width: 44rpx;
-          height: 36rpx;
-        }
-        span {
-          margin-top: 20rpx;
+        justify-content: space-between;
+        line-height: 1;
+        border-radius: 8rpx;
+        border-bottom: 1rpx solid #eee;
+        .title {
           font-size: 26rpx;
+          color: #333;
+        }
+        .link {
+          display: flex;
+          align-items: center;
+          font-size: 26rpx;
+          color: #999;
+        }
+      }
+      .step {
+        padding: 0 24rpx 24rpx;
+        margin-top: 48rpx;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+        .item {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          flex: 0 0 20%;
+          img {
+            width: 44rpx;
+            height: 36rpx;
+          }
+          span {
+            margin-top: 20rpx;
+            font-size: 26rpx;
+          }
         }
       }
     }
@@ -236,56 +251,5 @@ page {
       top:50%;
     }
   }
-  // 商品列表
-  .two-clo-goods {
-    padding: 0 30rpx;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start;
-    .item {
-      margin-top: 20rpx;
-      display: flex;
-      flex-direction: column;
-      width: 334rpx;
-      border-radius: 10rpx;
-      overflow: hidden;
-      background-color: #fff;
-      &:nth-of-type(2n) {
-        margin-left: 22rpx;
-      }
-      img {
-        width: 334rpx;
-        height: 334rpx;
-      }
-      .wrap {
-        padding: 0 24rpx 20rpx;
-        .title {
-          margin-top: 20rpx;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          overflow: hidden;
-          font-size: 30rpx;
-          line-height: 38rpx;
-        }
-        .line {
-          margin-top: 20rpx;
-          line-height: 1;
-          .price {
-            font-size: 28rpx;
-            span {
-              font-size: 18rpx;
-            }
-          }
-        }
-        .sub {
-          margin-top: 20rpx;
-          font-size: 18rpx;
-          line-height: 1;
-        }
-      }
-    }
-  }
-
 }
 </style>
