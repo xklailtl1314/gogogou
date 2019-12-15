@@ -2,7 +2,7 @@
   <div class="timeBuy">
     <div class="top">
       <div class="left">
-        <span class="title">限时秒杀</span>
+        <span class="title">{{timeBuy.title}}</span>
         <downTime :endTime="msg" :sTime="sTime" :endMsg="endMsg"></downTime>
       </div>
       <div class="wrap">
@@ -20,45 +20,53 @@
     </div>
 
     <div class="tab-content">
-      <!-- <div v-show="cur==idx" v-for="(item,idx) in xsmsFirstThree" :key="idx">{{item.content}}</div> -->
-      <navigator class="list-item">
-        <div class="wrapping">
-          <img src="/static/images/ad.jpg">
-          <div class="info">
-            <h4 class="title">日清合味道方便面整箱12杯开杯乐海鲜杯面泡面桶装速食刀剑神域</h4>
-            <span class="sub">食品类销量排15名</span>
-            <div class="bottom">
-              <div class="left">
-                <div class="current"><span>￥</span>6.9</div>
-                <del>￥35</del>
+      <div v-show="cur==idx" v-for="(item,idx) in xsmsFirstThree" :key="idx">
+        <navigator class="list-item" v-for="item1 in item.content" :key="item1.id">
+          <div class="wrapping">
+            <img :src="item1.img_src">
+            <div class="info">
+              <h4 class="title">{{item1.title}}</h4>
+              <span class="sub">{{item1.sub}}</span>
+              <div class="bottom">
+                <div class="left">
+                  <div class="current"><span>￥</span>{{item1.price}}</div>
+                  <del>￥{{item1.oldPrice}}</del>
+                </div>
+                <div class="goShop">{{toShow}}</div>
               </div>
-              <div class="goShop">去购物</div>
             </div>
           </div>
-        </div>
-      </navigator>
+        </navigator>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import downTime from '../components/DownTime.vue' // 倒计时
+import downTime from '@/components/DownTime.vue' // 倒计时
 export default {
+  props: ['timeBuy'],
   data () {
     return {
+      oSelect: false, // 判断是否可点
+      toShow: '', // 按钮文字
       msg: new Date('2019-12-06 10:00:00').getTime(),
       endMsg: '倒计时结束',
       sTime: new Date('2019-12-06 8:00:00').getTime(),
       cur: 0, // 限时秒杀tab切换
       newArr: [], // 限时秒杀，过滤当前时间数组
       xsms: [ // 限时秒杀假数据
-        {startTime: '2019-12-09 14:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-09 16:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-09 18:00:00', timeState: '', content: '1111'},
-        {startTime: '2019-12-09 20:00:00', timeState: '', content: '2222'},
-        {startTime: '2019-12-09 22:00:00', timeState: '', content: '3333'},
-        {startTime: '2019-12-09 24:00:00', timeState: '', content: '4444'}
-      ]
+        {startTime: '2019-12-12 08:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-12 10:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-12 12:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-12 14:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-12 16:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-12 18:00:00', timeState: '', content: '1111'},
+        {startTime: '2019-12-12 20:00:00', timeState: '', content: '2222'},
+        {startTime: '2019-12-12 22:00:00', timeState: '', content: '3333'}
+      ],
+      xsmsList: [],
+      contentArr: []
     }
   },
   components: {
@@ -66,7 +74,7 @@ export default {
   },
   methods: {
     getCurrentTime () { // 现实秒杀时间格式化，获取时，分
-      this.xsms.map(item => {
+      this.timeBuy.xsms.map(item => {
         let dt = new Date(item.startTime)
         let hh = (dt.getHours()).toString().padStart(2, '0')
         let mm = (dt.getMinutes()).toString().padStart(2, '0')
@@ -74,29 +82,45 @@ export default {
       })
     },
     getNewArr () { // 过滤当前时间数组
-      this.xsms.forEach(item => {
-        let dt = new Date(item.startTime)
-        let hh = dt.getHours()
+      this.timeBuy.xsms.forEach(item => {
+        var dt = new Date(item.startTime)
+        var hh = dt.getHours()
         if (hh >= this.getTimeDbl) {
           this.newArr.push(item)
+          return this.newArr
         }
       })
     },
     timeToCount () { // 现实秒杀-开启倒计时
       this.newArr.slice(0, 3).forEach(item => {
         let dt = new Date(item.startTime)
-        let hh = dt.getHours()
-        let chh = (new Date()).getHours()
+        let hh = dt.getHours() // 数据字段时间小时
+        let chh = (new Date()).getHours() // 当前时间小时
         if (chh >= hh && chh < hh + 2) {
           item.timeState = '进行中'
+          // this.toShow = '去抢购'
         } else {
           item.timeState = '时间未到'
+          // this.toShow = '时间未到'
         }
       })
+      // this.newArr.slice(0, 1).forEach(item => {
+      //   item.content.forEach(item => {
+      //     this.toShow = '进行中'
+      //   })
+      // })
+      // this.newArr.slice(1, 3).forEach(item => {
+      //   item.content.forEach(item => {
+      //     this.toShow = '未开始'
+      //   })
+      // })
     }
   },
   computed: {
     xsmsFirstThree () { // 取限时秒杀前三项
+      // console.log(this.newArr.slice(0, 3))
+      // console.log(this.newArr.slice(0, 1))
+      console.log(this.newArr.slice(1, 3))
       return this.newArr.slice(0, 3)
     },
     getTimeDbl () { // 本机小时向下取整
@@ -108,7 +132,8 @@ export default {
       }
     }
   },
-  created () {
+  created () {},
+  mounted () {
     this.getCurrentTime()
     this.getNewArr()
     this.timeToCount()
