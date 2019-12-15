@@ -5,7 +5,7 @@
         class="item"
         hover-class="none"
         v-for="(item,idx) in cate" :key="idx" :url="item.link">
-        <img :src="item.url">
+        <img :src="item.img_src">
         <span>{{item.name}}</span>
       </navigator>
     </div>
