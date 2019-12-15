@@ -1,23 +1,23 @@
 <template>
   <div class="today-discount">
     <div class="top">
-      <span class="title">今日必拼</span>
+      <span class="title">{{todayDiscount.name}}</span>
       <!-- 文字上下滚动 -->
       <div class="text-scroll">
         <div class="inner-container">
-          <div v-for="(item, idx) in arr" :key="idx" class="wrap">
-            <img :src="item.img_src" class="avator">
+          <div v-for="(item, idx) in getNewName" :key="idx" class="wrap">
+            <img :src="item.avator" class="avator">
             <span class="text">{{item.name}}</span>
           </div>
         </div>
       </div>
       <navigator class="more">
-        <span>更多超值团</span>
+        <span>{{todayDiscount.more}}</span>
         <i class="iconfont icon-angle-right"></i>
       </navigator>
     </div>
     <div class="list">
-      <navigator v-for="(item, idx) in goodsList" :key="idx" class="link">
+      <navigator v-for="(item, idx) in todayDiscount.list" :key="idx" class="link">
         <img :src="item.img_src" >
         <p class="current"><span>￥</span>{{item.price}}</p>
         <p class="old">￥{{item.oldPrice}}</p>
@@ -28,6 +28,7 @@
 
 <script>
 export default {
+  props: ['todayDiscount'],
   data () {
     return {
       arr: [
