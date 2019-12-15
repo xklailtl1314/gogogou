@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .slogan {
-  padding: 20rpx 0 0;
+  padding: 4rpx 0 0;
   display: flex;
   background-color: #b51c66;
   li {
