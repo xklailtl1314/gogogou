@@ -3,7 +3,7 @@
     <!-- 个人信息 -->
     <div class="user-info">
       <div class="wrap">
-        <img src="">
+        <img src="/static/images/ad.jpg">
         <span>授权并查看</span>
       </div>
       <navigator class="msg">
