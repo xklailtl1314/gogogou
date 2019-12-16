@@ -12,7 +12,7 @@
             <label>{{item.timeState}}</label>
           </li>
         </ul>
-        <navigator class="more">
+        <navigator class="more" hover-class="none">
           <span>查看更多</span>
           <i class="iconfont icon-angle-right"></i>
         </navigator>
@@ -48,22 +48,22 @@ export default {
   props: ['timeBuy'],
   data () {
     return {
-      oSelect: false, // 判断是否可点
+      // oSelect: false, // 判断是否可点
       toShow: '', // 按钮文字
-      msg: new Date('2019-12-06 10:00:00').getTime(),
+      msg: new Date('2019-12-16 10:00:00').getTime(),
       endMsg: '倒计时结束',
-      sTime: new Date('2019-12-06 8:00:00').getTime(),
+      sTime: new Date('2019-12-16 8:00:00').getTime(),
       cur: 0, // 限时秒杀tab切换
       newArr: [], // 限时秒杀，过滤当前时间数组
       xsms: [ // 限时秒杀假数据
-        {startTime: '2019-12-12 08:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-12 10:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-12 12:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-12 14:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-12 16:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-12 18:00:00', timeState: '', content: '1111'},
-        {startTime: '2019-12-12 20:00:00', timeState: '', content: '2222'},
-        {startTime: '2019-12-12 22:00:00', timeState: '', content: '3333'}
+        {startTime: '2019-12-16 08:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-16 10:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-16 12:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-16 14:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-16 16:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-16 18:00:00', timeState: '', content: '1111'},
+        {startTime: '2019-12-16 20:00:00', timeState: '', content: '2222'},
+        {startTime: '2019-12-16 22:00:00', timeState: '', content: '3333'}
       ],
       xsmsList: [],
       contentArr: []
@@ -120,7 +120,7 @@ export default {
     xsmsFirstThree () { // 取限时秒杀前三项
       // console.log(this.newArr.slice(0, 3))
       // console.log(this.newArr.slice(0, 1))
-      console.log(this.newArr.slice(1, 3))
+      // console.log(this.newArr.slice(1, 3))
       return this.newArr.slice(0, 3)
     },
     getTimeDbl () { // 本机小时向下取整
