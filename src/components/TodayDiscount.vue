@@ -11,7 +11,7 @@
           </div>
         </div>
       </div>
-      <navigator class="more">
+      <navigator class="more" hover-class="none">
         <span>{{todayDiscount.more}}</span>
         <i class="iconfont icon-angle-right"></i>
       </navigator>
