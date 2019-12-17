@@ -26,9 +26,10 @@ export default {
   position: relative;
   .bg {
     position: absolute;
-    height: 153rpx;
+    height: 240rpx;
     width: 100%;
     background-color: #b51c66;
+    border-radius: 100% 100% 100% 100% / 0% 0% 30% 30%;
   }
   .wrap {
     padding: 24rpx 30rpx 0;
