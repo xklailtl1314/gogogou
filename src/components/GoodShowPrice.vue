@@ -113,7 +113,7 @@ export default {
       }
       .dot {
         padding: 0 2rpx;
-        background-color: #fff;
+        // background-color: #fff;
         color: #b7246b;
       }
     }
