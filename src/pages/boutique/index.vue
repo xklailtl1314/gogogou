@@ -2,7 +2,7 @@
   <div class="boutique">
     <!-- 精选页 -->
     <!-- 头部导航 -->
-    <HeaderBar :cateLink="cateLink" :cates="cates"></HeaderBar>
+    <HeaderBar :cateLink="cateLink" :cates="cates" :msgLink="msgLink"></HeaderBar>
     <!-- 三栏口号 -->
     <Slogin></Slogin>
     <!-- 轮播 -->
@@ -83,6 +83,7 @@ export default {
   data () {
     return {
       cur: 0, // tab切换初始值
+      msgLink: '../myMessage/main', // 头部导航链接-消息
       cates: '../cates/main', // 头部导航链接-分类
       cateLink: '../search/main', // 头部导航链接-搜索
       swiperItems: [ // 轮播
@@ -130,9 +131,9 @@ export default {
 page {
   background-color: #eee;
 }
-.category {
-  background-color: #eee !important;
-}
+// .category {
+//   background-color: #eee !important;
+// }
 .swiper-wrap {
   .wrap {
     background-color: #eee !important;
