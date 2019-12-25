@@ -36,7 +36,7 @@
         <span class="title">我的工具</span>
       </div>
       <div class="step">
-        <navigator class="item" v-for="(item, idx) in oToolList" :key="idx">
+        <navigator class="item" v-for="(item, idx) in oToolList" :key="idx" :url="item.link" hover-class="none">
           <img :src="item.img_src">
           <span>{{item.name}}</span>
         </navigator>
@@ -63,9 +63,9 @@ export default {
         {img_src: '/static/images/icon_05.png', name: '退款/售后'}
       ],
       oToolList: [ // 我的工具
-        {img_src: '/static/images/icon_06.png', name: '优惠券'},
-        {img_src: '/static/images/icon_07.png', name: '我的地址'},
-        {img_src: '/static/images/icon_08.png', name: '咕咕购客服'}
+        {img_src: '/static/images/icon_06.png', name: '优惠券', link: '../myCoupon/main'},
+        {img_src: '/static/images/icon_07.png', name: '我的地址', link: '../myCoupon/main'},
+        {img_src: '/static/images/icon_08.png', name: '咕咕购客服', link: '../myCoupon/main'}
       ],
       twoColGoods: [ // 猜你喜欢商品列表
         {
@@ -138,9 +138,10 @@ page {
     position: relative;
     .bg {
       position: absolute;
-      height: 160rpx;
+      height: 180rpx;
       width: 100%;
       background-color: #b51c66;
+      border-radius: 100% 100% 100% 100% / 0% 0% 60% 60%;
     }
     .wrap {
       position: relative;
