@@ -11,7 +11,7 @@
     <!-- 今日必拼 -->
     <TodayDiscount :todayDiscount="todayDiscount"></TodayDiscount>
     <!-- 限时秒杀 -->
-    <limitBuy :timeBuy="timeBuy"></limitBuy>
+    <limitBuy :timeBuy="timeBuy" :limitBuyLink="limitBuyLink"></limitBuy>
     <!-- 精挑细选 -->
     <div class="jtxx">
       <div class="top">
@@ -39,6 +39,7 @@ import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
 export default {
   data () {
     return {
+      limitBuyLink: '../limitBuy/main', // 限时秒杀链接
       cates: '../cates/main', // 头部导航链接-分类
       cateLink: '../search/main', // 头部导航链接-搜索
       swiperItems: [ // 轮播
