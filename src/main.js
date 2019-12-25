@@ -3,6 +3,8 @@ import App from './App'
 
 // weui
 import 'mpvue-weui/src/style/weui.css'
+import '../src/lib/weui/weui.css'
+// 阿里妈妈字体图标
 import '../src/style/iconfont.css'
 
 Vue.config.productionTip = false

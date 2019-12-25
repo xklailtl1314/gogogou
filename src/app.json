@@ -1,10 +1,24 @@
 {
   "pages": [
-    "pages/index/main",
-    "pages/goodsList/main",
-    "pages/goodsShow/main",
+    "pages/myOrders/main",
+    "pages/myOrdersWaitPay/main",
+    "pages/orderDetails/main",
+    "pages/boutique/main",
+    "pages/myCouponToUsed/main",
+    "pages/demo/main",
+    "pages/myCoupon/main",
     "pages/search/main",
-    "pages/my/main"
+    "pages/searchList/main",
+    "pages/my/main",
+    "pages/myMessageDetail/main",
+    "pages/myMessage/main",
+    "pages/goodsShow/main",
+    "pages/goodsShowComment/main",
+    "pages/mall/main",
+    "pages/limitBuy/main",
+    "pages/collection/main",
+    "pages/cates/main",
+    "pages/goodsList/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,32 +26,32 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#d81e06",
+    "selectedColor": "#b51c66",
     "list": [{
-      "pagePath": "pages/index/main",
+      "pagePath": "pages/boutique/main",
       "text": "精选",
-      "iconPath": "/static/images/bag.png",
-      "selectedIconPath": "/static/images/bag_active.png"
+      "iconPath": "/static/images/tabicon_01.png",
+      "selectedIconPath": "/static/images/tabicon_01_active.png"
     }, {
-      "pagePath": "pages/search/main",
-      "text": "发现",
-      "iconPath": "/static/images/fenlei.png",
-      "selectedIconPath": "/static/images/fenlei_active.png"
+      "pagePath": "pages/mall/main",
+      "text": "商城",
+      "iconPath": "/static/images/tabicon_02.png",
+      "selectedIconPath": "/static/images/tabicon_02_active.png"
     }, {
-      "pagePath": "pages/search/main",
+      "pagePath": "pages/collection/main",
       "text": "喜欢",
-      "iconPath": "/static/images/like.png",
-      "selectedIconPath": "/static/images/like_active.png"
+      "iconPath": "/static/images/tabicon_03.png",
+      "selectedIconPath": "/static/images/tabicon_03_active.png"
     }, {
-      "pagePath": "pages/search/main",
+      "pagePath": "pages/my/main",
       "text": "购物车",
-      "iconPath": "/static/images/cart.png",
-      "selectedIconPath": "/static/images/cart_active.png"
+      "iconPath": "/static/images/tabicon_04.png",
+      "selectedIconPath": "/static/images/tabicon_04_active.png"
     }, {
       "pagePath": "pages/my/main",
       "text": "我",
-      "iconPath": "/static/images/my.png",
-      "selectedIconPath": "/static/images/my_active.png"
+      "iconPath": "/static/images/tabicon_05.png",
+      "selectedIconPath": "/static/images/tabicon_05_active.png"
     }]
   }
 }

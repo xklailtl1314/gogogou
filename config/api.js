@@ -7,5 +7,7 @@ module.exports = {
     GoodsList: ApiRootUrl + 'getgoods', // 商品列表
     GoodsShow: ApiRootUrl + 'getthumimages/', // 商品详情-轮播
     SearchResult: ApiRootUrl + 'e57832aa3c4a003731a9cd8234dec828/gugugou/api/search_result', //  搜索结果
-    Collection: ApiRootUrl + 'e57832aa3c4a003731a9cd8234dec828/gugugou/api/collection' // 收藏列表
+    Collection: ApiRootUrl + 'e57832aa3c4a003731a9cd8234dec828/gugugou/api/collection', // 收藏列表
+    LimitBuy: ApiRootUrl + 'e57832aa3c4a003731a9cd8234dec828/gugugou/api/limitBuy', // 限时秒杀
+    Boutique: ApiRootUrl + 'e57832aa3c4a003731a9cd8234dec828/gugugou/api/boutique' // 精选页
 }
