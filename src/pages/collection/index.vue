@@ -45,7 +45,7 @@ export default {
         // console.log(res)
         if (res.status == 200) {
           this.goodsList = res.message
-          console.log(this.goodsList)
+          // console.log(this.goodsList)
         }
       })
     }
