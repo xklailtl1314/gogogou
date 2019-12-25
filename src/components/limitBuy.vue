@@ -12,7 +12,7 @@
             <label>{{item.timeState}}</label>
           </li>
         </ul>
-        <navigator class="more" hover-class="none">
+        <navigator class="more" hover-class="none" :url="limitBuyLink">
           <span>查看更多</span>
           <i class="iconfont icon-angle-right"></i>
         </navigator>
@@ -45,7 +45,7 @@
 <script>
 import downTime from '@/components/DownTime.vue' // 倒计时
 export default {
-  props: ['timeBuy'],
+  props: ['timeBuy', 'limitBuyLink'],
   data () {
     return {
       // oSelect: false, // 判断是否可点
