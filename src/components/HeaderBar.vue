@@ -13,7 +13,7 @@
       <div class="scan" hover-class="none" @tap="sacnCode">
         <i class="iconfont icon-scan"></i>
       </div>
-      <navigator class="msg" hover-class="none">
+      <navigator class="msg" hover-class="none" :url="msgLink">
         <i class="iconfont icon-i-message"></i>
       </navigator>
     </div>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  props: ['cateLink', 'cates'],
+  props: ['cateLink', 'cates', 'msgLink'],
   methods: {
     // 扫一扫
     sacnCode () {
