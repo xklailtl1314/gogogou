@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- 头部导航 -->
-    <HeaderBar :cateLink="cateLink" :cates="cates"></HeaderBar>
+    <HeaderBar :cateLink="cateLink" :cates="cates" :msgLink="msgLink"></HeaderBar>
     <!-- 三栏口号 -->
     <Slogin></Slogin>
     <!-- 轮播 -->
@@ -41,6 +41,7 @@ export default {
   data () {
     return {
       showUrl: '../goodsShow/main', // 商品详情
+      msgLink: '../myMessage/main', // 头部导航链接-消息
       limitBuyLink: '../limitBuy/main', // 限时秒杀链接
       cates: '../cates/main', // 头部导航链接-分类
       cateLink: '../search/main', // 头部导航链接-搜索
