@@ -57,14 +57,14 @@ export default {
       cur: 0, // 限时秒杀tab切换
       newArr: [], // 限时秒杀，过滤当前时间数组
       xsms: [ // 限时秒杀假数据
-        {startTime: '2019-12-16 08:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-16 10:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-16 12:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-16 14:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-16 16:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-16 18:00:00', timeState: '', content: '1111'},
-        {startTime: '2019-12-16 20:00:00', timeState: '', content: '2222'},
-        {startTime: '2019-12-16 22:00:00', timeState: '', content: '3333'}
+        {startTime: '2019-12-30 08:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-30 10:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-30 12:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-30 14:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-30 16:00:00', timeState: '', content: '0000'},
+        {startTime: '2019-12-30 18:00:00', timeState: '', content: '1111'},
+        {startTime: '2019-12-30 20:00:00', timeState: '', content: '2222'},
+        {startTime: '2019-12-30 22:00:00', timeState: '', content: '3333'}
       ],
       xsmsList: [],
       contentArr: []
@@ -76,7 +76,7 @@ export default {
   methods: {
     getCurrentTime () { // 现实秒杀时间格式化，获取时，分
       this.timeBuy.xsms.map(item => {
-        let dt = new Date(item.startTime)
+        let dt = new Date(item.startTime.replace(/-/g, '/')) // 修复ios NaN 问题
         let hh = (dt.getHours()).toString().padStart(2, '0')
         let mm = (dt.getMinutes()).toString().padStart(2, '0')
         item.oTime = `${hh}:${mm}`
@@ -84,7 +84,7 @@ export default {
     },
     getNewArr () { // 过滤当前时间数组
       this.timeBuy.xsms.forEach(item => {
-        var dt = new Date(item.startTime)
+        var dt = new Date(item.startTime.replace(/-/g, '/'))
         var hh = dt.getHours()
         if (hh >= this.getTimeDbl) {
           this.newArr.push(item)
@@ -94,7 +94,7 @@ export default {
     },
     timeToCount () { // 现实秒杀-开启倒计时
       this.newArr.slice(0, 3).forEach(item => {
-        let dt = new Date(item.startTime)
+        let dt = new Date(item.startTime.replace(/-/g, '/'))
         let hh = dt.getHours() // 数据字段时间小时
         let chh = (new Date()).getHours() // 当前时间小时
         if (chh >= hh && chh < hh + 2) {
