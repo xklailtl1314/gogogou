@@ -9,7 +9,7 @@
     <!-- 分类 -->
     <Category :cate="category"></Category>
     <!-- 今日必拼 -->
-    <TodayDiscount :todayDiscount="todayDiscount"></TodayDiscount>
+    <!-- <TodayDiscount :todayDiscount="todayDiscount"></TodayDiscount> -->
     <!-- 限时秒杀 -->
     <limitBuy :timeBuy="timeBuy" :limitBuyLink="limitBuyLink"></limitBuy>
     <!-- 精挑细选 -->
@@ -20,7 +20,7 @@
           <label>{{goodsList.subTitle}}</label>
         </div>
       </div>
-      <TwoColGoods :twoColGoods="goodsList.content"></TwoColGoods>
+      <TwoColGoods :twoColGoods="goodsList.content" :showUrl="showUrl"></TwoColGoods>
     </div>
   </div>
 </template>
@@ -32,33 +32,33 @@ import HeaderBar from '@/components/HeaderBar.vue' // 头部导航
 import Slogin from '@/components/Slogin.vue' // 广告标语
 import Swiper from '@/components/Swiper.vue' // 轮播
 import Category from '@/components/Category.vue' // 分类
-import TodayDiscount from '@/components/TodayDiscount.vue' // 今日必拼
+// import TodayDiscount from '@/components/TodayDiscount.vue' // 今日必拼
 import limitBuy from '@/components/limitBuy.vue' // 限时秒杀
 import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
 
 export default {
   data () {
     return {
+      showUrl: '../goodsShow/main', // 商品详情
       limitBuyLink: '../limitBuy/main', // 限时秒杀链接
       cates: '../cates/main', // 头部导航链接-分类
       cateLink: '../search/main', // 头部导航链接-搜索
       swiperItems: [ // 轮播
-        '/static/images/1.jpg',
-        '/static/images/2.jpg',
-        '/static/images/3.jpg',
-        '/static/images/4.jpg'
+        '/static/tmp/mall_swiper01.jpg',
+        '/static/tmp/mall_swiper02.jpg',
+        '/static/tmp/mall_swiper03.jpg'
       ],
       category: [ // 分类
-        { img_src: '/static/images/5.jpg', name: '汽车汽配', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '房产家装', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '保险理财', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '服务名品', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '美妆个护', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '食品生鲜', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '数码影音', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '时尚家庭', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '母婴玩具', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '生活服务', link: '../goodsList/main' }
+        { img_src: '/static/tmp/mall01.png', name: '汽车汽配', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall02.png', name: '房产家装', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall03.png', name: '保险理财', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall04.png', name: '服务名品', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall05.png', name: '美妆个护', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall06.png', name: '食品生鲜', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall07.png', name: '数码影音', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall08.png', name: '时尚家庭', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall09.png', name: '母婴玩具', link: '../goodsList/main' },
+        { img_src: '/static/tmp/mall10.png', name: '生活服务', link: '../goodsList/main' }
       ],
       todayDiscount: {}, // 今日必拼
       timeBuy: {}, // 限时秒杀
@@ -69,8 +69,8 @@ export default {
     getInfo () { // mock数据获取
       util.request(api.HomeInfo).then(res => {
         if (res.status == 200) {
-          this.swiperItems = res.swiperItems // 轮播
-          this.category = res.homeCate // 分类
+          // this.swiperItems = res.swiperItems // 轮播
+          // this.category = res.homeCate // 分类
           this.todayDiscount = res.todayDiscount // 今日必拼
           this.timeBuy = res.timeBuy // 限时秒杀
           this.goodsList = res.jtxx // 精挑细选
@@ -83,7 +83,7 @@ export default {
     Slogin,
     Swiper,
     Category,
-    TodayDiscount,
+    // TodayDiscount,
     limitBuy,
     TwoColGoods
   },
@@ -96,6 +96,14 @@ export default {
 <style lang="scss">
 page {
   background-color: #eee;
+}
+.header-bar {
+  .category {
+    background-color: transparent;
+  }
+}
+.category {
+  background-color: #fff;
 }
 .jtxx {
   .top {
