@@ -17,7 +17,7 @@
       <div class="wrap">
         <div class="line">
           <span class="title">我的订单</span>
-          <navigator class="link">
+          <navigator class="link" url="../myOrders/main" hover-class="none">
             全部订单
             <i class="iconfont icon-angle-right"></i>
           </navigator>
@@ -56,15 +56,15 @@ export default {
   data () {
     return {
       oList: [ // 我的订单
-        {img_src: '/static/images/icon_01.png', name: '代付款'},
-        {img_src: '/static/images/icon_02.png', name: '代发货'},
-        {img_src: '/static/images/icon_03.png', name: '代收货'},
-        {img_src: '/static/images/icon_04.png', name: '代评价'},
+        {img_src: '/static/images/icon_01.png', name: '待付款'},
+        {img_src: '/static/images/icon_02.png', name: '待发货'},
+        {img_src: '/static/images/icon_03.png', name: '待收货'},
+        {img_src: '/static/images/icon_04.png', name: '待评价'},
         {img_src: '/static/images/icon_05.png', name: '退款/售后'}
       ],
       oToolList: [ // 我的工具
         {img_src: '/static/images/icon_06.png', name: '优惠券', link: '../myCoupon/main'},
-        {img_src: '/static/images/icon_07.png', name: '我的地址', link: '../myCoupon/main'},
+        {img_src: '/static/images/icon_07.png', name: '我的地址', link: '../myAddress/main'},
         {img_src: '/static/images/icon_08.png', name: '咕咕购客服', link: '../myCoupon/main'}
       ],
       twoColGoods: [ // 猜你喜欢商品列表
