@@ -91,9 +91,7 @@ export default {
       cateLink: '../search/main', // 头部导航链接-搜索
       swiperItems: [ // 轮播
         '/static/images/1.jpg',
-        '/static/images/2.jpg',
-        '/static/images/3.jpg',
-        '/static/images/4.jpg'
+        '/static/images/2.jpg'
       ],
       category: [ // 分类
         { img_src: '/static/images/jx01.png', name: '直播购', link: '../goodsList/main' },
