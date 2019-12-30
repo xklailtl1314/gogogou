@@ -45,9 +45,9 @@ export default {
   data () {
     return {
       toShow: '', // 按钮文字
-      msg: new Date('2019-12-16 10:00:00').getTime(),
+      msg: new Date(('2019-12-16 10:00:00').replace(/-/g, '/')).getTime(),
       endMsg: '倒计时结束',
-      sTime: new Date('2019-12-16 8:00:00').getTime(),
+      sTime: new Date(('2019-12-16 8:00:00').replace(/-/g, '/')).getTime(),
       cur: 0, // 限时秒杀tab切换
       newArr: [], // 限时秒杀，过滤当前时间数组
       // xsms: []
@@ -70,19 +70,20 @@ export default {
           this.xsms = res.timeBuy.xsms
 
           this.xsms.map(item => { // 现实秒杀时间格式化，获取时，分
-            let dt = new Date(item.startTime)
+            let dt = new Date(item.startTime.replace(/-/g, '/'))
             let hh = (dt.getHours()).toString().padStart(2, '0')
             let mm = (dt.getMinutes()).toString().padStart(2, '0')
             item.oTime = `${hh}:${mm}`
           })
 
           this.xsms.forEach(item => { // 过滤当前时间数组
-            var dt = new Date(item.startTime)
+            var dt = new Date(item.startTime.replace(/-/g, '/'))
             var hh = dt.getHours()
             if (hh >= this.getTimeDbl) {
-              this.newArr.push(item)
+              let newArr = [...this.newArr]
+              newArr.push(item)
               // console.log(this.newArr)
-              return this.newArr
+              this.newArr = newArr
             }
           })
 

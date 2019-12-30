@@ -54,9 +54,9 @@ export default {
     return {
       // oSelect: false, // 判断是否可点
       toShow: '', // 按钮文字
-      msg: new Date('2019-12-16 10:00:00').getTime(),
+      msg: new Date(('2019-12-16 10:00:00').replace(/-/g, '/')).getTime(),
       endMsg: '倒计时结束',
-      sTime: new Date('2019-12-16 8:00:00').getTime(),
+      sTime: new Date(('2019-12-16 8:00:00').replace(/-/g, '/')).getTime(),
       cur: 0, // 限时秒杀tab切换
       newArr: [], // 限时秒杀，过滤当前时间数组
       xsms: [ // 限时秒杀假数据
