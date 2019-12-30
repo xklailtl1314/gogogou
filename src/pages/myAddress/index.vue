@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="right">
-          <span>管理</span>
+          <span @click="goToManage">管理</span>
         </div>
       </div>
 
@@ -27,20 +27,29 @@
           </div>
         </div>
         <div class="right">
-          <span>管理</span>
+          <span @click="goToManage">管理</span>
         </div>
       </div>
     </div>
 
     <div class="fix-bottom">
-      <button>新增收获地址</button>
+      <button @click="goToManage">新增收获地址</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  data () {
+    return {}
+  },
+  methods: {
+    goToManage () {
+      wx.navigateTo({
+        url: '../myAddressManage/main'
+      })
+    }
+  }
 }
 </script>
 
