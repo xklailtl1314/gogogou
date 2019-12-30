@@ -17,7 +17,7 @@
         <div v-show="cur==0">
           <!-- 轮播 -->
           <div class="swiper-wrap">
-            <swiper class="bannerBox" interval="3000" duration="500" previous-margin="50rpx" next-margin="50rpx" @change="bannerChange">
+            <swiper class="bannerBox" autoplay interval="3000" duration="500" previous-margin="50rpx" next-margin="50rpx" @change="bannerChange">
               <block v-for="(banner,inx) in bannerData" :key="banner.id">
                 <swiper-item class="swiper-i">
                   <div class="wrap">
