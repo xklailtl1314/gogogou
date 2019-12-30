@@ -1,5 +1,5 @@
 <template>
-  <!-- 我的订单-代收货-详情 -->
+  <!-- 我的订单-待收货-详情 -->
   <div class="my-wait-receive">
     <!-- 进度详情 -->
     <div class="step-info">
