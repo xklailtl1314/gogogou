@@ -36,7 +36,7 @@
                   <div class="current"><span>￥</span>{{item1.price}}</div>
                   <del>￥{{item1.oldPrice}}</del>
                 </div>
-                <div class="goShop">{{toShow}}</div>
+                <div class="goShop">{{item.toShow}}</div>
               </div>
             </div>
           </div>
@@ -60,14 +60,14 @@ export default {
       cur: 0, // 限时秒杀tab切换
       newArr: [], // 限时秒杀，过滤当前时间数组
       xsms: [ // 限时秒杀假数据
-        {startTime: '2019-12-30 08:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-30 10:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-30 12:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-30 14:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-30 16:00:00', timeState: '', content: '0000'},
-        {startTime: '2019-12-30 18:00:00', timeState: '', content: '1111'},
-        {startTime: '2019-12-30 20:00:00', timeState: '', content: '2222'},
-        {startTime: '2019-12-30 22:00:00', timeState: '', content: '3333'}
+        {startTime: '2019-12-30 08:00:00', timeState: '', content: '0000', toShow: ''},
+        {startTime: '2019-12-30 10:00:00', timeState: '', content: '0000', toShow: ''},
+        {startTime: '2019-12-30 12:00:00', timeState: '', content: '0000', toShow: ''},
+        {startTime: '2019-12-30 14:00:00', timeState: '', content: '0000', toShow: ''},
+        {startTime: '2019-12-30 16:00:00', timeState: '', content: '0000', toShow: ''},
+        {startTime: '2019-12-30 18:00:00', timeState: '', content: '1111', toShow: ''},
+        {startTime: '2019-12-30 20:00:00', timeState: '', content: '2222', toShow: ''},
+        {startTime: '2019-12-30 22:00:00', timeState: '', content: '3333', toShow: ''}
       ],
       xsmsList: [],
       contentArr: []
@@ -102,10 +102,10 @@ export default {
         let chh = (new Date()).getHours() // 当前时间小时
         if (chh >= hh && chh < hh + 2) {
           item.timeState = '进行中'
-          // this.toShow = '去抢购'
+          item.toShow = '去抢购'
         } else {
           item.timeState = '时间未到'
-          // this.toShow = '时间未到'
+          item.toShow = '未开始'
         }
       })
       // this.newArr.slice(0, 1).forEach(item => {

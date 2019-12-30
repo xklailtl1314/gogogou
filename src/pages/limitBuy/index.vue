@@ -28,7 +28,7 @@
                   <div class="current"><span>￥</span>{{item1.price}}</div>
                   <del>￥{{item1.oldPrice}}</del>
                 </div>
-                <div class="goShop">{{toShow}}</div>
+                <div class="goShop">{{item.toShow}}</div>
               </div>
             </div>
           </div>
@@ -93,8 +93,10 @@ export default {
             let chh = (new Date()).getHours() // 当前时间小时
             if (chh >= hh && chh < hh + 2) {
               item.timeState = '进行中'
+              item.toShow = '去抢购'
             } else {
               item.timeState = '时间未到'
+              item.toShow = '未开始'
             }
           })
         }
