@@ -23,7 +23,8 @@
       <div v-show="cur==idx" v-for="(item,idx) in xsmsFirstThree" :key="idx">
         <navigator class="list-item" v-for="item1 in item.content" :key="item1.id">
           <div class="wrapping">
-            <img :src="item1.img_src">
+            <!-- <img :src="item1.img_src"> -->
+            <img src="/static/tmp/mall11.jpg">
             <div class="info">
               <h4 class="title">{{item1.title}}</h4>
               <span class="sub">{{item1.sub}}</span>
