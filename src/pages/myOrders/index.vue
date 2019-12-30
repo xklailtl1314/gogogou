@@ -11,7 +11,6 @@
       <div class="tab-content">
         <!-- 全部 -->
         <div v-show="cur==0">
-          <!-- 全部 -->
           <div class="shop">
             <div class="top">
               <div class="left">
@@ -45,7 +44,7 @@
             </div>
           </div>
         </div>
-        <!-- 代付款 -->
+        <!-- 待付款 -->
         <div v-show="cur==1" class="wait-pay">
           <div class="shop">
             <div class="top">
@@ -105,14 +104,146 @@
             </div>
           </div>
         </div>
-        <!-- 代发货 -->
-        <div v-show="cur==2">222</div>
+        <!-- 待发货 -->
+        <div v-show="cur==2">
+          <div class="shop">
+            <div class="top">
+              <div class="left">
+                <img src="/static/images/g-icon2.png">
+                <span>雷蛇官方旗舰店</span>
+                <i class="iconfont icon-angle-right"></i>
+              </div>
+              <div class="right">
+                <span>买家已付款</span>
+              </div>
+            </div>
+            <span class="order-num">订单编号：EF201912055521492158129</span>
+            <div class="order-item" @click="goToWaitShip">
+              <img src="/static/images/ad.jpg">
+              <div class="m">
+                <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
+                <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
+              </div>
+              <div class="r">
+                <span class="t">¥ 299.00</span>
+                <span class="b">x1</span>
+              </div>
+            </div>
+            <div class="total">
+              <span>共1件商品 合计：</span>
+              <span class="r">￥6.9</span>
+            </div>
+            <div class="bottom">
+              <span class="cancel">查看物流</span>
+              <span class="submit">确认收货</span>
+            </div>
+          </div>
+        </div>
         <!-- 待收货 -->
-        <div v-show="cur==3">333</div>
+        <div v-show="cur==3">
+          <div class="shop">
+            <div class="top">
+              <div class="left">
+                <img src="/static/images/g-icon2.png">
+                <span>雷蛇官方旗舰店</span>
+                <i class="iconfont icon-angle-right"></i>
+              </div>
+              <div class="right">
+                <span>买家已付款</span>
+              </div>
+            </div>
+            <span class="order-num">订单编号：EF201912055521492158129</span>
+            <div class="order-item" @click="goToWaitRecive">
+              <img src="/static/images/ad.jpg">
+              <div class="m">
+                <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
+                <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
+              </div>
+              <div class="r">
+                <span class="t">¥ 299.00</span>
+                <span class="b">x1</span>
+              </div>
+            </div>
+            <div class="total">
+              <span>共1件商品 合计：</span>
+              <span class="r">￥6.9</span>
+            </div>
+            <div class="bottom">
+              <span class="cancel" @click="goToLogistics">查看物流</span>
+              <span class="submit">确认收货</span>
+            </div>
+          </div>
+        </div>
         <!-- 待评价 -->
-        <div v-show="cur==4">444</div>
+        <div v-show="cur==4">
+          <div class="shop">
+            <div class="top">
+              <div class="left">
+                <img src="/static/images/g-icon2.png">
+                <span>雷蛇官方旗舰店</span>
+                <i class="iconfont icon-angle-right"></i>
+              </div>
+              <div class="right">
+                <span>买家已付款</span>
+              </div>
+            </div>
+            <span class="order-num">订单编号：EF201912055521492158129</span>
+            <div class="order-item" @click="goToWaitRecive">
+              <img src="/static/images/ad.jpg">
+              <div class="m">
+                <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
+                <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
+              </div>
+              <div class="r">
+                <span class="t">¥ 299.00</span>
+                <span class="b">x1</span>
+              </div>
+            </div>
+            <div class="total">
+              <span>共1件商品 合计：</span>
+              <span class="r">￥6.9</span>
+            </div>
+            <div class="bottom">
+              <span class="cancel" @click="goToLogistics">查看物流</span>
+              <span class="submit">评价商品</span>
+            </div>
+          </div>
+        </div>
         <!-- 退款/售后 -->
-        <div v-show="cur==5">555</div>
+        <div v-show="cur==5">
+          <div class="shop">
+            <div class="top">
+              <div class="left">
+                <img src="/static/images/g-icon2.png">
+                <span>雷蛇官方旗舰店</span>
+                <i class="iconfont icon-angle-right"></i>
+              </div>
+              <div class="right">
+                <span>审核中</span>
+              </div>
+            </div>
+            <span class="order-num">订单编号：EF201912055521492158129</span>
+            <div class="order-item" @click="goToWaitRecive">
+              <img src="/static/images/ad.jpg">
+              <div class="m">
+                <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
+                <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
+              </div>
+              <div class="r">
+                <span class="t">¥ 299.00</span>
+                <span class="b">x1</span>
+              </div>
+            </div>
+            <div class="total">
+              <span>退款金额：</span>
+              <span class="r">￥6.9</span>
+            </div>
+            <!-- <div class="bottom">
+              <span class="cancel" @click="goToLogistics">查看物流</span>
+              <span class="submit">评价商品</span>
+            </div> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -123,8 +254,25 @@ export default {
   data () {
     return {
       cur: 0, // tab切换
-      oList: ['全部', '代付款', '代发货', '待收货', '待评价', '退款/售后'],
+      oList: ['全部', '待付款', '待发货', '待收货', '待评价', '退款/售后'],
       oContent: []
+    }
+  },
+  methods: {
+    goToLogistics () { // 待收货-查看物流
+      wx.navigateTo({
+        url: '../myOrdersLogistics/main'
+      })
+    },
+    goToWaitShip () { // 待发货-详情
+      wx.navigateTo({
+        url: '../myWaitShip/main'
+      })
+    },
+    goToWaitRecive () { // 待收货-详情
+      wx.navigateTo({
+        url: '../myWaitReceive/main'
+      })
     }
   }
 }
