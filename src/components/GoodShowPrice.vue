@@ -1,6 +1,6 @@
 <template>
   <div class="price-wrap">
-    <img src="/static/images/miaosha.png" class="bg">
+    <img src="/static/images/miaosha.jpg" class="bg">
     <div class="left">
       <img src="/static/images/g-icon.png" class="icon">
       <div class="r">
