@@ -1,7 +1,8 @@
 <template>
   <div class="two-clo-goods">
-    <navigator class="item" v-for="(item, idx) in twoColGoods" :key="idx">
-      <img :src="item.img_src">
+    <navigator class="item" v-for="(item, idx) in twoColGoods" :key="idx" :url="showUrl">
+      <!-- <img :src="item.img_src"> -->
+      <img src="/static/tmp/mall12.jpg">
       <div class="wrap">
         <span class="title">{{item.title}}</span>
         <div class="line">
@@ -16,7 +17,7 @@
 <script>
 export default {
   data () {},
-  props: ['twoColGoods']
+  props: ['twoColGoods', 'showUrl']
 }
 </script>
 
