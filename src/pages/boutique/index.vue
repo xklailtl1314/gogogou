@@ -23,7 +23,8 @@
                 <span class="left">直播中</span>
                 <span class="right">{{item.num}}观看</span>
               </div>
-              <img :src="item.img_src" class="img">
+              <!-- <img :src="item.img_src" class="img"> -->
+              <img src="/static/tmp/b001.jpg" class="img">
             </div>
             <span class="tit">{{item.title}}</span>
             <div class="bottom">
@@ -39,7 +40,8 @@
     </div>
     <!-- 广告位 -->
     <navigator class="main-ad">
-      <image :src="ad" mode="widthFix"></image>
+      <!-- <image :src="ad" mode="widthFix"></image> -->
+      <image src="/static/tmp/b002.jpg" mode="widthFix"></image>
     </navigator>
     <!-- 边看变买、好物推荐 -->
     <div class="g-tab">
@@ -52,7 +54,8 @@
 
       <div class="two-clo-video" v-show="cur==idx" v-for="(item, idx) in twoCol" :key="idx">
         <navigator class="item" v-for="(item, i) in item.list" :key="i">
-          <img :src="item.img_src">
+          <!-- <img :src="item.img_src"> -->
+          <img src="/static/tmp/b003.jpg">
           <div class="wrap">
             <span class="title">{{item.title}}</span>
             <div class="line">
@@ -93,11 +96,11 @@ export default {
         '/static/images/4.jpg'
       ],
       category: [ // 分类
-        { img_src: '/static/images/5.jpg', name: '直播购', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '咕咕商城', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '美食生鲜', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '美妆个护', link: '../goodsList/main' },
-        { img_src: '/static/images/5.jpg', name: '天天进博', link: '../goodsList/main' }
+        { img_src: '/static/images/jx01.png', name: '直播购', link: '../goodsList/main' },
+        { img_src: '/static/images/jx02.png', name: '咕咕商城', link: '../goodsList/main' },
+        { img_src: '/static/images/jx03.png', name: '美食生鲜', link: '../goodsList/main' },
+        { img_src: '/static/images/jx04.png', name: '美妆个护', link: '../goodsList/main' },
+        { img_src: '/static/images/jx05.png', name: '天天进博', link: '../goodsList/main' }
       ],
       hhdk: {}, // 好货档口
       ad: '', // 广告占位图
