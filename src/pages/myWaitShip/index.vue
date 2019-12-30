@@ -1,5 +1,5 @@
 <template>
-  <!-- 我的订单-代发货-详情 -->
+  <!-- 我的订单-待发货-详情 -->
   <div class="my-wait-ship">
     <!-- 进度详情 -->
     <div class="step-info">
