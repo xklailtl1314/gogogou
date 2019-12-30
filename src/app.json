@@ -1,18 +1,25 @@
 {
   "pages": [
+    "pages/boutique/main",
+    "pages/gugubo/main",
+    "pages/demo/main",
+    "pages/myAddress/main",
+    "pages/myAddressManage/main",
+    "pages/goodsShow/main",
+    "pages/shopCar/main",
     "pages/myOrders/main",
+    "pages/myWaitReceive/main",
+    "pages/myWaitShip/main",
+    "pages/myOrdersLogistics/main",
     "pages/myOrdersWaitPay/main",
     "pages/orderDetails/main",
-    "pages/boutique/main",
     "pages/myCouponToUsed/main",
-    "pages/demo/main",
     "pages/myCoupon/main",
     "pages/search/main",
     "pages/searchList/main",
     "pages/my/main",
     "pages/myMessageDetail/main",
     "pages/myMessage/main",
-    "pages/goodsShow/main",
     "pages/goodsShowComment/main",
     "pages/mall/main",
     "pages/limitBuy/main",
@@ -38,12 +45,12 @@
       "iconPath": "/static/images/tabicon_02.png",
       "selectedIconPath": "/static/images/tabicon_02_active.png"
     }, {
-      "pagePath": "pages/collection/main",
-      "text": "喜欢",
+      "pagePath": "pages/gugubo/main",
+      "text": "咕咕播",
       "iconPath": "/static/images/tabicon_03.png",
       "selectedIconPath": "/static/images/tabicon_03_active.png"
     }, {
-      "pagePath": "pages/my/main",
+      "pagePath": "pages/shopCar/main",
       "text": "购物车",
       "iconPath": "/static/images/tabicon_04.png",
       "selectedIconPath": "/static/images/tabicon_04_active.png"
