@@ -5,6 +5,7 @@
       <img src="/static/tmp/mall12.jpg">
       <div class="wrap">
         <span class="title">{{item.title}}</span>
+
         <div class="line">
           <div class="price"><span>￥</span>{{item.price}}</div>
         </div>
@@ -17,7 +18,10 @@
 <script>
 export default {
   data () {},
-  props: ['twoColGoods', 'showUrl']
+  props: ['twoColGoods', 'showUrl'],
+  components: {
+
+  }
 }
 </script>
 

@@ -22,6 +22,7 @@
       </div>
       <TwoColGoods :twoColGoods="goodsList.content" :showUrl="showUrl"></TwoColGoods>
     </div>
+
   </div>
 </template>
 

@@ -27,6 +27,9 @@
             <img src="/static/tmp/mall11.jpg">
             <div class="info">
               <h4 class="title">{{item1.title}}</h4>
+              <!-- 进度条组件 -->
+              <i-progress percent="45"  i-class="gg-progress"></i-progress>
+
               <span class="sub">{{item1.sub}}</span>
               <div class="bottom">
                 <div class="left">
@@ -224,7 +227,7 @@ export default {
     padding: 0 20rpx;
     .list-item {
       margin-bottom: 24rpx;
-      height: 238rpx;
+      height: 265rpx;
       border-radius: 14rpx;
       background-color: #fff;
       overflow: hidden;
@@ -233,7 +236,7 @@ export default {
         img {
           display: flex;
           width: 238rpx;
-          height: 238rpx;
+          height: 265rpx;
         }
         .info {
           padding: 20rpx;
@@ -244,6 +247,18 @@ export default {
             font-size: 26rpx;
             line-height: 38rpx;
           }
+          // .gg-progress {
+          //   background-color: lightblue;
+          //   .i-progress-inner {
+          //     background-color: #ededed;
+          //     .i-progress-bg {
+          //       background: linear-gradient(90deg,rgba(218,89,152,1) 0%,rgba(181,28,102,1) 100%);
+          //     }
+          //   }
+          //   .i-progress-text {
+          //     color: #b51c66;
+          //   }
+          // }
           .sub {
             margin-top: 12rpx;
             font-size: 20rpx;

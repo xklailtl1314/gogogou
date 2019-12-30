@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "咕咕购商城"
+  "navigationBarTitleText": "咕咕购商城",
+  "usingComponents": {
+    "i-progress": "../../../static/iview/progress/index"
+  }
 }
