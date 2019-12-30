@@ -6,10 +6,16 @@
         <img src="/static/images/ad.jpg">
         <span>授权并查看</span>
       </div>
-      <navigator class="msg">
-        <!-- <img src="/static/images/msg.png"> -->
-        <i class="iconfont icon-i-message"></i>
-      </navigator>
+
+      <div class="r">
+        <navigator class="collect" url="../collection/main" hover-class="none">
+          <i class="iconfont icon-star"></i>
+        </navigator>
+        <navigator class="msg" hover-class="none">
+          <!-- <img src="/static/images/msg.png"> -->
+          <i class="iconfont icon-i-message"></i>
+        </navigator>
+      </div>
     </div>
     <!-- 我的订单 -->
     <div class="my-order">
@@ -122,15 +128,25 @@ page {
         color: #fff;
       }
     }
-    .msg {
-      i {
-        font-size: 40rpx;
-        color: #fff;
+    .r {
+      display: flex;
+      .collect {
+        .iconfont {
+          font-size: 40rpx;
+          color: #fff;
+        }
       }
-      // img {
-      //   width: 30rpx;
-      //   height: 30rpx;
-      // }
+      .msg {
+        margin-left: 20rpx;
+        .iconfont {
+          font-size: 40rpx;
+          color: #fff;
+        }
+        // img {
+        //   width: 30rpx;
+        //   height: 30rpx;
+        // }
+      }
     }
   }
   // 我的订单
@@ -216,6 +232,7 @@ page {
         display: flex;
         align-items: center;
         flex-direction: column;
+        min-width: 5em;
         img {
           width: 36rpx;
           height: 36rpx;
