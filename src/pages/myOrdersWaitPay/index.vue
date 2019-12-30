@@ -1,5 +1,5 @@
 <template>
-  <!-- 我的订单-代付款-详情 -->
+  <!-- 我的订单-待付款-详情 -->
   <div class="my-order-waitpay">
     <!-- 进度详情 -->
     <div class="step-info">
@@ -40,17 +40,6 @@
         </div>
       </div>
       <span class="order-num">订单编号：EF201912055521492158129</span>
-      <div class="order-item">
-        <img src="/static/images/ad.jpg">
-        <div class="m">
-          <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
-          <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
-        </div>
-        <div class="r">
-          <span class="t">¥ 299.00</span>
-          <span class="b">x1</span>
-        </div>
-      </div>
       <div class="order-item">
         <img src="/static/images/ad.jpg">
         <div class="m">
@@ -361,7 +350,7 @@ page {
     }
 
 
-    // 公用代码
+    // 公用待码
     // 单选框样式
     radio {
       width: 38rpx;
