@@ -25,7 +25,7 @@ export default {
 .category {
   padding: 0 30rpx 22rpx;
   display: flex;
-  background-color: #fff;
+  // background-color: #fff;
   .wrap {
     display: flex;
     flex-flow: row wrap;
