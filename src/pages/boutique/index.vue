@@ -46,31 +46,42 @@
     <!-- 边看变买、好物推荐 -->
     <div class="g-tab">
       <div class="top">
-        <div class="item" @click="cur=idx" :class="[{active: cur==idx}]" v-for="(item, idx) in twoCol" :key="idx">
-          <span class="title">{{item.title}}</span>
-          <span class="sub">{{item.sub}}</span>
+        <div class="item" @click="cur=0" :class="[{active: cur==0}]">
+          <span class="title">边看边买</span>
+          <span class="sub">网红新推荐</span>
+        </div>
+        <div class="item" @click="cur=1" :class="[{active: cur==1}]">
+          <span class="title">好物精选</span>
+          <span class="sub">90天低价</span>
         </div>
       </div>
+      <!-- 边看变买 -->
+      <div class="tab-content">
 
-      <div class="two-clo-video" v-show="cur==idx" v-for="(item, idx) in twoCol" :key="idx">
-        <navigator class="item" v-for="(item, i) in item.list" :key="i">
-          <!-- <img :src="item.img_src"> -->
-          <img :src="[cur==1?'/static/tmp/b003.jpg':'/static/tmp/b004.jpg']">
-          <!-- <img src="/static/tmp/b003.jpg"> -->
-          <div class="wrap">
-            <span class="title">{{item.title}}</span>
-            <div class="line">
-              <div class="left">
-                <img :src="item.avatar">
-                <span>{{item.name}}</span>
-              </div>
-              <div class="right">
-                <i class="iconfont icon-heart"></i>
-                <span>{{item.total}}</span>
+        <div class="two-clo-video" v-show="cur==0" v-for="(item, idx) in twoCol" :key="idx">
+          <navigator class="item" v-for="(item, i) in item.list" :key="i">
+            <!-- <img :src="item.img_src"> -->
+            <img src="/static/tmp/b003.jpg">
+            <div class="wrap">
+              <span class="title">{{item.title}}</span>
+              <div class="line">
+                <div class="left">
+                  <img :src="item.avatar">
+                  <span>{{item.name}}</span>
+                </div>
+                <div class="right">
+                  <i class="iconfont icon-heart"></i>
+                  <span>{{item.total}}</span>
+                </div>
               </div>
             </div>
-          </div>
-        </navigator>
+          </navigator>
+        </div>
+
+        <!-- 好物推荐 -->
+        <div v-show="cur==1">
+          <TwoColGoods :twoColGoods="goodsList.content" :showUrl="showUrl"></TwoColGoods>
+        </div>
       </div>
     </div>
   </div>
@@ -83,9 +94,12 @@ import HeaderBar from '@/components/HeaderBar.vue' // 头部导航
 import Slogin from '@/components/Slogin.vue' // 广告标语
 import Swiper from '@/components/Swiper.vue' // 轮播
 import Category from '@/components/Category.vue' // 分类
+import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
 export default {
   data () {
     return {
+      goodsList: {}, // 好物精选
+      showUrl: '../goodsShow/main', // 商品详情
       cur: 0, // tab切换初始值
       msgLink: '../myMessage/main', // 头部导航链接-消息
       cates: '../cates/main', // 头部导航链接-分类
@@ -110,7 +124,8 @@ export default {
     HeaderBar,
     Slogin,
     Swiper,
-    Category
+    Category,
+    TwoColGoods
   },
   methods: {
     getPageInfo () {
@@ -119,6 +134,12 @@ export default {
           this.hhdk = res.data.hhdk
           this.ad = res.data.ad
           this.twoCol = res.data.twoCol
+        }
+      })
+      util.request(api.HomeInfo).then(res => {
+        if (res.status == 200) {
+          console.log(res.jtxx.content)
+          this.goodsList = res.jtxx // 好物精选
         }
       })
     }
@@ -305,13 +326,14 @@ page {
   }
   .two-clo-video {
     padding: 0 30rpx;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start;
+    // display: flex;
+    // flex-flow: row wrap;
+    // align-content: flex-start;
     .item {
       margin-top: 20rpx;
-      display: flex;
-      flex-direction: column;
+      display: inline-block;
+      // display: flex;
+      // flex-direction: column;
       width: 334rpx;
       border-radius: 10rpx;
       overflow: hidden;
