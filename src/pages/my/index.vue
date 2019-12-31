@@ -49,11 +49,7 @@
       </div>
     </div>
     <!-- 猜你喜欢 -->
-    <!-- <p class="divider-line">猜你喜欢</p> -->
-    <!-- 分割线 -->
-    <div class="divider-wrap">
-      <i-divider content="猜你喜欢" color="#666666" lineColor="#cccccc" i-class="g-divider"></i-divider>
-    </div>
+    <p class="divider-line">猜你喜欢</p>
     <!-- 两列布局 -->
     <TwoColGoods :twoColGoods="twoColGoods"></TwoColGoods>
 
@@ -251,30 +247,5 @@ page {
       }
     }
   }
-  // 分割线
-  // .divider-line {
-  //   margin-top: 24rpx;
-  //   font-size: 28rpx;
-  //   text-align:center;
-  //   position:relative;
-  //   &::before {
-  //     content:'';
-  //     width:34%;
-  //     height:1px;
-  //     background:#000;
-  //     position:absolute;
-  //     left:48rpx;
-  //     top:50%;
-  //   }
-  //   &::after {
-  //     content:'';
-  //     width:34%;
-  //     height:1px;
-  //     background:#000;
-  //     position:absolute;
-  //     right:48rpx;
-  //     top:50%;
-  //   }
-  // }
 }
 </style>

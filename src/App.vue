@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .container {
   height: 100%;
   display: flex;
@@ -47,6 +47,33 @@ export default {
   -webkit-transition: width 2s;
   -o-transition: width 2s;
   box-sizing: border-box;
+}
+
+  /* 分割线 */
+.divider-line {
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align:center;
+  position:relative;
+  &::before {
+    content:'';
+    width:34%;
+    height:1px;
+    background:#ccc;
+    position:absolute;
+    left:48rpx;
+    top:50%;
+  }
+  &::after {
+    content:'';
+    width:34%;
+    height:1px;
+    background:#ccc;
+    position:absolute;
+    right:48rpx;
+    top:50%;
+  }
 }
 
 </style>

@@ -112,10 +112,8 @@
         </div>
       </div>
     </div>
-    <!-- 分割线 -->
-    <div class="divider-wrap">
-      <i-divider content="宝贝详情" color="#666666" lineColor="#cccccc" i-class="g-divider"></i-divider>
-    </div>
+    <!-- 分割线--宝贝详情 -->
+    <p class="divider-line">宝贝详情</p>
 
     <!-- 领券弹窗 -->
     <GoodsShowCoupon :iscoupon="iscoupon" @isCoupon="isCoupon"></GoodsShowCoupon>
