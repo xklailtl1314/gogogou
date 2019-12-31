@@ -179,12 +179,14 @@ page {
     background-image: linear-gradient(to right, #b61c66, #DA5897);
     .left {
       display: flex;
+      flex: 1;
       flex-direction: column;
       .title {
         font-size: 30rpx;
         font-weight: bold;
         color: #fff;
         line-height: 1;
+        text-align: center;
       }
       .sub {
         margin-top: 20rpx;
@@ -194,16 +196,21 @@ page {
       }
     }
     .wrap {
+      margin-left: 80rpx;
       display: flex;
+      flex: 3;
       align-items: center;
+      // background-color: lightpink;
       .tab-title {
+        // justify-content: flex-start;
+
         display: flex;
         height: 60rpx;
         .tabT {
           display: flex;
           flex-direction: column;
           &:not(:first-child) {
-            margin-left: 60rpx;
+            margin-left: 48rpx;
           }
           span {
             font-size: 22rpx;
