@@ -46,8 +46,8 @@ export default {
       cates: '../cates/main', // 头部导航链接-分类
       cateLink: '../search/main', // 头部导航链接-搜索
       swiperItems: [ // 轮播
-        '/static/tmp/mall_swiper01.jpg',
-        '/static/tmp/mall_swiper02.jpg'
+        '/static/images/1.jpg',
+        '/static/images/2.jpg'
       ],
       category: [ // 分类
         { img_src: '/static/tmp/mall01.png', name: '汽车汽配', link: '../goodsList/main' },
