@@ -17,7 +17,7 @@
         <div v-show="cur==0">
           <!-- 轮播 -->
           <div class="swiper-wrap">
-            <swiper class="bannerBox" autoplay interval="3000" duration="500" previous-margin="50rpx" next-margin="50rpx" @change="bannerChange">
+            <swiper class="bannerBox" autoplay circular interval="3000" duration="500" previous-margin="50rpx" next-margin="50rpx" @change="bannerChange">
               <block v-for="(banner,inx) in bannerData" :key="banner.id">
                 <swiper-item class="swiper-i">
                   <div class="wrap">
@@ -34,6 +34,44 @@
           </div>
           <!-- 列表 -->
           <div class="hot-list">
+            <div class="item">
+              <div class="left">
+                <img src="/static/images/ad.jpg">
+                <div class="top">
+                  <i class="iconfont icon-tongji"></i>
+                  <span>4947观看</span>
+                </div>
+                <div class="bottom">
+                  <i class="iconfont icon-heart"></i>
+                  <span>82.82万</span>
+                </div>
+              </div>
+              <div class="right">
+                <div class="tit">美少女最爱的粉系化妆刷</div>
+                <div class="m">
+                  <img src="/static/images/ad.jpg">
+                  <div class="wrap">
+                    <span class="name">小美美妆屋</span>
+                    <span class="site">杭州</span>
+                  </div>
+                </div>
+                <div class="two-tui">
+                  <div class="l">
+                    <img src="/static/images/ad.jpg">
+                    <span>￥2999</span>
+                  </div>
+                  <div class="r">
+                    <img src="/static/images/ad.jpg">
+                    <div class="wrap">
+                      <span>500</span>
+                      <label>宝贝</label>
+                    </div>
+                  </div>
+                </div>
+                <span class="tip">#韩国馆</span>
+              </div>
+            </div>
+
             <div class="item">
               <div class="left">
                 <img src="/static/images/ad.jpg">
@@ -218,21 +256,22 @@ export default {
             .swiper-i {
               // width: 470rpx;
               // transform: translate(80%, 0px) translateZ(0px) !important;
-              &:nth-of-type(1) {
-                transform: translate(0%, 0px) translateZ(0px) !important;
-              }
-              &:nth-of-type(2) {
-                transform: translate(74%, 0px) translateZ(0px) !important;
-              }
-              &:nth-of-type(3) {
-                transform: translate(148%, 0px) translateZ(0px) !important;
-              }
-              &:nth-of-type(4) {
-                transform: translate(222%, 0px) translateZ(0px) !important;
-              }
-              &:nth-of-type(5) {
-                transform: translate(296%, 0px) translateZ(0px) !important;
-              }
+              width: 80% !important;
+              // &:nth-of-type(1) {
+              //   transform: translate(0%, 0px) translateZ(0px) !important;
+              // }
+              // &:nth-of-type(2) {
+              //   transform: translate(74%, 0px) translateZ(0px) !important;
+              // }
+              // &:nth-of-type(3) {
+              //   transform: translate(148%, 0px) translateZ(0px) !important;
+              // }
+              // &:nth-of-type(4) {
+              //   transform: translate(222%, 0px) translateZ(0px) !important;
+              // }
+              // &:nth-of-type(5) {
+              //   transform: translate(296%, 0px) translateZ(0px) !important;
+              // }
               .wrap {
                 height: 370rpx;
                 width: 470rpx;
@@ -283,6 +322,9 @@ export default {
             height: 380rpx;
             border-radius: 14rpx;
             overflow: hidden;
+            &:not(:first-child) {
+              margin-top: 20rpx;
+            }
             .left {
               position: relative;
               display: flex;
