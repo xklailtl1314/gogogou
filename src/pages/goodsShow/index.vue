@@ -97,14 +97,14 @@
       </div>
       <div class="item">
         <div class="top">
-          <img src="/static/images/ad.jpg">
+          <img src="/static/tmp/b005.jpg">
           <span>虎狮狼右兵卫</span>
         </div>
         <div class="mid">
           <span>衣服不错，特别好看又舒服。从衣服设计上来说，图案本身就不错，很有吸引力，看着比较舒服，反正我超...</span>
           <div class="img-wrap">
-            <img src="/static/images/ad.jpg">
-            <img src="/static/images/ad.jpg">
+            <img src="/static/tmp/b005.jpg">
+            <img src="/static/tmp/b006.jpeg">
           </div>
         </div>
         <div class="bottom">
@@ -114,6 +114,11 @@
     </div>
     <!-- 分割线--宝贝详情 -->
     <p class="divider-line">宝贝详情</p>
+    <div class="goods-content">
+      <image src="/static/tmp/info01.jpg" mode="widthFix"></image>
+      <image src="/static/tmp/info02.jpg" mode="widthFix"></image>
+      <image src="/static/tmp/info03.jpg" mode="widthFix"></image>
+    </div>
 
     <!-- 领券弹窗 -->
     <GoodsShowCoupon :iscoupon="iscoupon" @isCoupon="isCoupon"></GoodsShowCoupon>
@@ -475,6 +480,12 @@ page {
         }
       }
 
+    }
+  }
+
+  .goods-content {
+    image {
+      width: 100%;
     }
   }
 }
