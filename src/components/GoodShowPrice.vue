@@ -25,8 +25,8 @@ import downTime from '@/components/DownTime.vue' // 倒计时
 export default {
   data () {
     return {
-      msg: new Date('2019-12-19 12:00:00').getTime(),
-      sTime: new Date('2019-12-19 10:00:00').getTime(),
+      msg: new Date(('2019-12-19 12:00:00').replace(/-/g, '/')).getTime(),
+      sTime: new Date(('2019-12-19 10:00:00').replace(/-/g, '/')).getTime(),
       endMsg: '倒计时结束'
     }
   },
