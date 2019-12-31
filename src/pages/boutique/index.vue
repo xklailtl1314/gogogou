@@ -201,6 +201,7 @@ page {
           padding: 0 20rpx;
           margin: 20rpx 0 0 0;
           font-size: 28rpx;
+          line-height: 1.2;
           color: #333;
         }
         .bottom {
