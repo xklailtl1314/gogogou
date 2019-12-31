@@ -58,7 +58,7 @@
         </div>
         <div class="bottom">
           <span class="tip">部分商品满99元，享包邮</span>
-          <div class="right">
+          <div class="right" @click="goToList">
             <span>去凑单</span>
             <i class="iconfont icon-angle-right"></i>
           </div>
@@ -97,6 +97,11 @@ export default {
     }
   },
   methods: {
+    goToList () { // 去往商品列表
+      wx.navigateTo({
+        url: '../searchList/main'
+      })
+    },
     bindPickerChange (e) { // 下拉框选中
       this.oIndex = e.mp.detail.value
     },
