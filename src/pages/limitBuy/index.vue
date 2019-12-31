@@ -22,6 +22,8 @@
             <img :src="item1.img_src">
             <div class="info">
               <h4 class="title">{{item1.title}}</h4>
+              <!-- 进度条组件 -->
+              <i-progress percent="45"  i-class="gg-progress"></i-progress>
               <span class="sub">{{item1.sub}}</span>
               <div class="bottom">
                 <div class="left">

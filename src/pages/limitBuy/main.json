@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "咕咕秒杀"
+  "navigationBarTitleText": "咕咕秒杀",
+  "usingComponents": {
+    "i-progress": "../../../static/iview/progress/index"
+  }
 }

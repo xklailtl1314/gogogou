@@ -55,7 +55,8 @@
       <div class="two-clo-video" v-show="cur==idx" v-for="(item, idx) in twoCol" :key="idx">
         <navigator class="item" v-for="(item, i) in item.list" :key="i">
           <!-- <img :src="item.img_src"> -->
-          <img src="/static/tmp/b003.jpg">
+          <img :src="[cur==1?'/static/tmp/b003.jpg':'/static/tmp/b004.jpg']">
+          <!-- <img src="/static/tmp/b003.jpg"> -->
           <div class="wrap">
             <span class="title">{{item.title}}</span>
             <div class="line">
