@@ -112,6 +112,11 @@
         </div>
       </div>
     </div>
+    <!-- 分割线 -->
+    <div class="divider-wrap">
+      <i-divider content="宝贝详情" color="#666666" lineColor="#cccccc" i-class="g-divider"></i-divider>
+    </div>
+
     <!-- 领券弹窗 -->
     <GoodsShowCoupon :iscoupon="iscoupon" @isCoupon="isCoupon"></GoodsShowCoupon>
     <!-- 商品信息弹窗 -->
@@ -219,6 +224,9 @@ page {
   background-color: #eee;
 }
 .goods-show {
+  .divider-wrap {
+    padding: 0 60rpx;
+  }
   // 领券
   .goods-coupon {
     padding: 40rpx 30rpx 20rpx;
