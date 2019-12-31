@@ -16,7 +16,7 @@
         <div v-show="cur==0">
           <div class="content not-used">
             <!-- 搜索框 -->
-            <div class="line">
+            <!-- <div class="line">
               <div class="search-wrap">
                 <div class="wrap">
                   <input
@@ -29,7 +29,7 @@
                 </div>
               </div>
               <button :class="['btn-submit', oText.length > 0?'active':'']">兑换</button>
-            </div>
+            </div> -->
             <!-- 优惠券 -->
             <navigator class="item-coupon" v-for="(item, idx) in oList" :key="idx" url="../myCouponToUsed/main">
               <div class="t">
@@ -56,7 +56,7 @@
               </div>
             </navigator>
             <!-- 兑换链接按钮 -->
-            <button class="btn-exchange">用咕咕豆兑换几张吧~</button>
+            <!-- <button class="btn-exchange">用咕咕豆兑换几张吧~</button> -->
           </div>
         </div>
         <div v-show="cur==1">
@@ -108,7 +108,7 @@ export default {
   data () {
     return {
       cur: 0, // tab切换
-      oText: '', // 搜索框
+      // oText: '', // 搜索框
       oList: [ // 现金券
         {
           price: '10',
@@ -133,9 +133,9 @@ export default {
   },
   components: {},
   methods: {
-    clearSearch () { // 清除输入框搜索
-      this.oText = ''
-    }
+    // clearSearch () { // 清除输入框搜索
+    //   this.oText = ''
+    // }
   }
 }
 </script>
@@ -171,52 +171,52 @@ page {
       padding: 0 30rpx 20rpx;
       height: calc(100vh - 48rpx);
       // 搜索框
-      .line {
-        margin-bottom: 20rpx;
-        display: flex;
-        .search-wrap {
-          padding: 0;
-          display: flex;
-          background-color: #fff;
-          .wrap {
-            position: relative;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            width: 470rpx;
-            height: 70rpx;
-            border-radius: 35rpx;
-            background-color: #eee;
-            overflow: hidden;
-            input {
-              padding: 0 24rpx;
-              width: 100%;
-              font-size: 26rpx;
-            }
-            .icon-quxiao {
-              padding: 0 30rpx;
-              font-size: 30rpx;
-              color: #808084;
-            }
-          }
-        }
-        .btn-submit {
-          margin-left: 20rpx;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 200rpx;
-          height: 70rpx;
-          border-radius: 35rpx;
-          font-size: 30rpx;
-          line-height: 1;
-          color: #fff;
-          background-color: #ccc;
-          &.active {
-            background-color: #b51c66;
-          }
-        }
-      }
+      // .line {
+      //   margin-bottom: 20rpx;
+      //   display: flex;
+      //   .search-wrap {
+      //     padding: 0;
+      //     display: flex;
+      //     background-color: #fff;
+      //     .wrap {
+      //       position: relative;
+      //       margin: 0;
+      //       display: flex;
+      //       align-items: center;
+      //       width: 470rpx;
+      //       height: 70rpx;
+      //       border-radius: 35rpx;
+      //       background-color: #eee;
+      //       overflow: hidden;
+      //       input {
+      //         padding: 0 24rpx;
+      //         width: 100%;
+      //         font-size: 26rpx;
+      //       }
+      //       .icon-quxiao {
+      //         padding: 0 30rpx;
+      //         font-size: 30rpx;
+      //         color: #808084;
+      //       }
+      //     }
+      //   }
+      //   .btn-submit {
+      //     margin-left: 20rpx;
+      //     display: flex;
+      //     justify-content: center;
+      //     align-items: center;
+      //     width: 200rpx;
+      //     height: 70rpx;
+      //     border-radius: 35rpx;
+      //     font-size: 30rpx;
+      //     line-height: 1;
+      //     color: #fff;
+      //     background-color: #ccc;
+      //     &.active {
+      //       background-color: #b51c66;
+      //     }
+      //   }
+      // }
       // 优惠券
       .item-coupon {
         margin-bottom: 20rpx;
@@ -305,17 +305,17 @@ page {
         }
       }
       // 兑换链接按钮
-      .btn-exchange {
-        margin-top: 40rpx;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 72rpx;
-        font-size: 28rpx;
-        color: #666;
-        border-radius: 36rpx;
-        border: 1rpx solid #B5B5BF;
-      }
+      // .btn-exchange {
+      //   margin-top: 40rpx;
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
+      //   height: 72rpx;
+      //   font-size: 28rpx;
+      //   color: #666;
+      //   border-radius: 36rpx;
+      //   border: 1rpx solid #B5B5BF;
+      // }
       &.be-used {
         // 优惠券
         .item-coupon {
