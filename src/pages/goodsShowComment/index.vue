@@ -41,7 +41,7 @@
               <img src="/static/images/ad.jpg">
             </div>
           </div>
-          <div class="bottom">
+          <!-- <div class="bottom">
             <span>浏览 298 次</span>
             <div class="r">
               <div class="i">
@@ -53,7 +53,7 @@
                 <span>点赞</span>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -209,37 +209,37 @@ page {
             }
           }
         }
-        .bottom {
-          display: flex;
-          justify-content: space-between;
-          line-height: 1;
-          span {
-            font-size: 20rpx;
-            line-height: 1;
-            color: #999;
-          }
-          .r {
-            display: flex;
-            .i {
-              display: flex;
-              // font-size: 20rpx;
-              line-height: 1;
-              color: #666;
-              &:not(:first-child) {
-                margin-left: 40rpx;
-              }
-              .iconfont {
-                font-size: 20rpx;
-                color: #666;
-              }
-              span {
-                margin-left: 15rpx;
-                font-size: 20rpx;
-                color: #666;
-              }
-            }
-          }
-        }
+        // .bottom {
+        //   display: flex;
+        //   justify-content: space-between;
+        //   line-height: 1;
+        //   span {
+        //     font-size: 20rpx;
+        //     line-height: 1;
+        //     color: #999;
+        //   }
+        //   .r {
+        //     display: flex;
+        //     .i {
+        //       display: flex;
+        //       // font-size: 20rpx;
+        //       line-height: 1;
+        //       color: #666;
+        //       &:not(:first-child) {
+        //         margin-left: 40rpx;
+        //       }
+        //       .iconfont {
+        //         font-size: 20rpx;
+        //         color: #666;
+        //       }
+        //       span {
+        //         margin-left: 15rpx;
+        //         font-size: 20rpx;
+        //         color: #666;
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
   }
