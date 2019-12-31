@@ -117,42 +117,42 @@
           <div class="my-concern-list">
             <div class="item">
               <div class="top">
-                <img src="/static/images/ad.jpg">
+                <img src="/static/tmp/b005.jpg">
                 <div class="num">
                   <i class="iconfont icon-tongji"></i>
                   <span>4947观看</span>
                 </div>
               </div>
               <div class="bottom">
-                <img src="/static/images/ad.jpg">
+                <img src="/static/tmp/b005.jpg">
                 <span class="name">INKjewelry轻珠宝</span>
               </div>
             </div>
 
             <div class="item">
               <div class="top">
-                <img src="/static/images/ad.jpg">
+                <img src="/static/tmp/b005.jpg">
                 <div class="num">
                   <i class="iconfont icon-tongji"></i>
                   <span>4947观看</span>
                 </div>
               </div>
               <div class="bottom">
-                <img src="/static/images/ad.jpg">
+                <img src="/static/tmp/b005.jpg">
                 <span class="name">INKjewelry轻珠宝</span>
               </div>
             </div>
 
             <div class="item">
               <div class="top">
-                <img src="/static/images/ad.jpg">
+                <img src="/static/tmp/b005.jpg">
                 <div class="num">
                   <i class="iconfont icon-tongji"></i>
                   <span>4947观看</span>
                 </div>
               </div>
               <div class="bottom">
-                <img src="/static/images/ad.jpg">
+                <img src="/static/tmp/b005.jpg">
                 <span class="name">INKjewelry轻珠宝</span>
               </div>
             </div>
