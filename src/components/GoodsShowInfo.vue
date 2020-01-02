@@ -69,20 +69,6 @@
               <button class="g-submit">确定</button>
             </div>
           </div>
-          <!-- <view class="weui-half-screen-dialog__hd">
-            <view class="weui-half-screen-dialog__hd__side">
-              <view @tap="closeDialog" class="weui-icon-btn weui-icon-btn_close">关闭</view>
-            </view>
-            <view class="weui-half-screen-dialog__hd__main">
-              <text class="weui-half-screen-dialog__title">标题</text>
-              <text class="weui-half-screen-dialog__subtitle">标题</text>
-            </view>
-            <view class="weui-half-screen-dialog__hd__side">
-              <view class="weui-icon-btn weui-icon-btn_more">更多</view>
-            </view>
-          </view>
-          <view class="weui-half-screen-dialog__bd">12345</view>
-          <view class="weui-half-screen-dialog__ft">abcde</view> -->
         </view>
         <!-- 主体结束 -->
       </view>
