@@ -3,8 +3,8 @@
     <!-- 个人信息 -->
     <div class="user-info">
       <div class="wrap">
-        <img src="/static/images/ad.jpg">
-        <span>授权并查看</span>
+        <img :src="userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/ad.jpg' ">
+        <span>{{userInfo.nickName?userInfo.nickName:'未登录'}}</span>
       </div>
 
       <div class="r">
@@ -61,6 +61,7 @@ import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
 export default {
   data () {
     return {
+      userInfo: {}, // 用户头像
       oList: [ // 我的订单
         {img_src: '/static/images/icon_01.png', name: '待付款'},
         {img_src: '/static/images/icon_02.png', name: '待发货'},
@@ -97,7 +98,19 @@ export default {
   },
   components: {
     TwoColGoods
+  },
+  methods: {
+    getUserInfo () { // 获取用户信息
+      if (wx.getStorageSync('userInfo')) {
+        this.userInfo = wx.getStorageSync('userInfo')
+        // console.log(this.userInfo)
+      }
+    }
+  },
+  created () {
+    this.getUserInfo() // 获取用户信息
   }
+
 }
 </script>
 
