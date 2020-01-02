@@ -237,6 +237,9 @@ export default {
       this.isnotice = false
     }
   },
+  onLoad (e) {
+    // console.log(e)
+  },
   created () {
     this.isShow()
     this.isCoupon()

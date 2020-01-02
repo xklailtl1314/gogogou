@@ -20,7 +20,7 @@
           <label>{{goodsList.subTitle}}</label>
         </div>
       </div>
-      <TwoColGoods :twoColGoods="goodsList.content" :showUrl="showUrl"></TwoColGoods>
+      <TwoColGoods :twoColGoods="goodsList.content"></TwoColGoods>
     </div>
 
     <!-- 回到顶部 -->
@@ -43,7 +43,7 @@ import BackTop from '@/components/BackTop.vue' // 返回顶部
 export default {
   data () {
     return {
-      showUrl: '../goodsShow/main', // 商品详情
+      // showUrl: '../goodsShow/main', // 商品详情
       msgLink: '../myMessage/main', // 头部导航链接-消息
       limitBuyLink: '../limitBuy/main', // 限时秒杀链接
       cates: '../cates/main', // 头部导航链接-分类
@@ -78,6 +78,7 @@ export default {
           this.todayDiscount = res.todayDiscount // 今日必拼
           this.timeBuy = res.timeBuy // 限时秒杀
           this.goodsList = res.jtxx // 精挑细选
+          // console.log(res.jtxx)
         }
       })
     }

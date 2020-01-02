@@ -1,6 +1,6 @@
 <template>
   <div class="two-clo-goods">
-    <navigator class="item" v-for="(item, idx) in twoColGoods" :key="idx" :url="showUrl">
+    <navigator class="item" v-for="(item, idx) in twoColGoods" :key="idx" :url="'../goodsShow/main?id=' + item.id">
       <!-- <img :src="item.img_src"> -->
       <img src="/static/tmp/mall12.jpg">
       <div class="wrap">
@@ -18,7 +18,7 @@
 <script>
 export default {
   data () {},
-  props: ['twoColGoods', 'showUrl'],
+  props: ['twoColGoods'],
   components: {
 
   }

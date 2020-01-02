@@ -80,7 +80,7 @@
 
         <!-- 好物推荐 -->
         <div v-show="cur==1">
-          <TwoColGoods :twoColGoods="goodsList.content" :showUrl="showUrl"></TwoColGoods>
+          <TwoColGoods :twoColGoods="goodsList.content"></TwoColGoods>
         </div>
       </div>
     </div>
@@ -107,7 +107,7 @@ export default {
     return {
       isauthorize: false, // 触发用户授权弹窗
       goodsList: {}, // 好物精选
-      showUrl: '../goodsShow/main', // 商品详情
+      // showUrl: '../goodsShow/main', // 商品详情
       cur: 0, // tab切换初始值
       msgLink: '../myMessage/main', // 头部导航链接-消息
       cates: '../cates/main', // 头部导航链接-分类
