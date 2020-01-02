@@ -19,10 +19,10 @@
     <div class="goods-title-wrap">
       <h1 class="title">S码预售奥丽嘉朵2019冬粉色羽绒中长款1C69508671</h1>
       <div class="r">
-        <div class="item">
+        <Button class="item share-btn" open-type='share'>
           <i class="iconfont icon-fenxiang"></i>
           <span>分享</span>
-        </div>
+        </Button>
         <div class="item">
           <i  class="iconfont icon-star"></i>
           <span>收藏</span>
@@ -191,6 +191,12 @@ export default {
     GoodsShowParameter,
     Gnotice
   },
+  onShareAppMessage () { // 页面分享
+    return {
+      title: '咕咕购',
+      path: '../boutique/main'
+    }
+  },
   methods: {
     goCart () { // 去购物车
       wx.reLaunch({
@@ -306,6 +312,13 @@ page {
     .r {
       margin-left: 40rpx;
       display: flex;
+      .share-btn {
+        padding: 0;
+        background-color: #fff;
+        &::after {
+          border: none;
+        }
+      }
       .item {
         width: 42rpx;
         line-height: 1;
