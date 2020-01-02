@@ -87,6 +87,8 @@
 
     <!-- 授权弹窗 -->
     <Authorize :isauthorize="isauthorize" @isAuthorize="isAuthorize"></Authorize>
+    <!-- 回到顶部 -->
+    <BackTop></BackTop>
   </div>
 </template>
 
@@ -98,7 +100,8 @@ import Slogin from '@/components/Slogin.vue' // 广告标语
 import Swiper from '@/components/Swiper.vue' // 轮播
 import Category from '@/components/Category.vue' // 分类
 import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
-import Authorize from '../../components/Authorize.vue' // 授权弹窗
+import Authorize from '@/components/Authorize.vue' // 授权弹窗
+import BackTop from '@/components/BackTop.vue' // 返回顶部
 export default {
   data () {
     return {
@@ -131,7 +134,8 @@ export default {
     Swiper,
     Category,
     TwoColGoods,
-    Authorize
+    Authorize,
+    BackTop // 返回顶部
   },
   methods: {
     getPageInfo () {
