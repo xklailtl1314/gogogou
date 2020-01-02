@@ -128,7 +128,7 @@ export default {
       var num = this.num
       // 不作过多考虑自增1
       num++
-      console.log(typeof (num))
+      // console.log(typeof (num))
 
       // 只有大于一件的时候，才能normal状态，否则disable状态
       var minusStatus = num < 1 ? 'disabled' : 'normal'
