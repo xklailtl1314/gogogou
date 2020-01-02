@@ -133,15 +133,15 @@
     <Gnotice :isnotice="isnotice" @isNoticeShow="isNoticeShow"></Gnotice>
     <!-- 底部tab -->
     <div class="g-tab">
-      <navigator class="item">
+      <div class="item" @click="goHome">
         <i class="iconfont icon-home"></i>
         <span>首页</span>
-      </navigator>
-      <navigator class="item">
+      </div>
+      <navigator class="item" hover-class="none">
         <i class="iconfont icon-danseshixintubiao-"></i>
         <span>客服</span>
       </navigator>
-      <navigator class="item">
+      <navigator class="item" hover-class="none">
         <i class="iconfont icon-gouwuche-copy"></i>
         <span>购物车</span>
       </navigator>
@@ -192,6 +192,11 @@ export default {
     Gnotice
   },
   methods: {
+    goHome () { // 回首页
+      mpvue.reLaunch({
+        url: '../boutique/main'
+      })
+    },
     openParameter () {
       this.isparameter = true // 商品参数显示
     },
