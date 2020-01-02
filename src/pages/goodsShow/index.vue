@@ -141,10 +141,10 @@
         <i class="iconfont icon-danseshixintubiao-"></i>
         <span>客服</span>
       </navigator>
-      <navigator class="item" hover-class="none">
+      <div class="item" @click="goCart">
         <i class="iconfont icon-gouwuche-copy"></i>
         <span>购物车</span>
-      </navigator>
+      </div>
       <div class="btn-wrap">
         <div class="btn left-btn">
           <span>加入购物车</span>
@@ -192,8 +192,13 @@ export default {
     Gnotice
   },
   methods: {
+    goCart () { // 去购物车
+      wx.reLaunch({
+        url: '../shopCar/main'
+      })
+    },
     goHome () { // 回首页
-      mpvue.reLaunch({
+      wx.reLaunch({
         url: '../boutique/main'
       })
     },
