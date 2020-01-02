@@ -123,7 +123,11 @@
     <!-- 领券弹窗 -->
     <GoodsShowCoupon :iscoupon="iscoupon" @isCoupon="isCoupon"></GoodsShowCoupon>
     <!-- 商品信息弹窗 -->
-    <GoodsShowInfo :istrue="istrue" @isShow="isShow"></GoodsShowInfo>
+    <GoodsShowInfo
+      :istrue="istrue" @isShow="isShow"
+      :num="selectedCount"
+      :price="goodsInfo.price"
+      :id="goodsInfo.id"></GoodsShowInfo>
     <!-- 保障弹窗 -->
     <GoodsShowEnsure :isensure="isensure" @isEnsure="isEnsure"></GoodsShowEnsure>
     <!-- 产品参数 -->
@@ -157,7 +161,6 @@
     </div>
     <!-- 回到顶部 -->
     <BackTop></BackTop>
-
   </view>
 </template>
 
@@ -174,6 +177,15 @@ import Gnotice from '@/components/Gnotice.vue' // notice-bar
 export default {
   data () {
     return {
+      id: '', // 商品id
+      selectedCount: 1, // 商品选中数量
+      goodsInfo: { // 请求得到的数据
+        id: 1,
+        count: 99,
+        price: 299,
+        selected: true
+      },
+
       istrue: false, // 触发商品信息弹窗
       iscoupon: false, // 触发领券弹窗
       isensure: false, // 触发保障弹窗
@@ -238,7 +250,8 @@ export default {
     }
   },
   onLoad (e) {
-    // console.log(e)
+    this.id = e.id // 获取商品列表页传递过来的商品id
+    console.log(e)
   },
   created () {
     this.isShow()
