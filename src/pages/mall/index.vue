@@ -23,6 +23,8 @@
       <TwoColGoods :twoColGoods="goodsList.content" :showUrl="showUrl"></TwoColGoods>
     </div>
 
+    <!-- 回到顶部 -->
+    <BackTop></BackTop>
   </div>
 </template>
 
@@ -36,6 +38,7 @@ import Category from '@/components/Category.vue' // 分类
 // import TodayDiscount from '@/components/TodayDiscount.vue' // 今日必拼
 import limitBuy from '@/components/limitBuy.vue' // 限时秒杀
 import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
+import BackTop from '@/components/BackTop.vue' // 返回顶部
 
 export default {
   data () {
@@ -86,7 +89,8 @@ export default {
     Category,
     // TodayDiscount,
     limitBuy,
-    TwoColGoods
+    TwoColGoods,
+    BackTop // 返回顶部
   },
   created () {
     this.getInfo()
