@@ -128,6 +128,9 @@
     <GoodsShowEnsure :isensure="isensure" @isEnsure="isEnsure"></GoodsShowEnsure>
     <!-- 产品参数 -->
     <GoodsShowParameter :isparameter="isparameter" @isParameter="isParameter"></GoodsShowParameter>
+
+    <!-- notice-bar -->
+    <Gnotice :isnotice="isnotice" @isNoticeShow="isNoticeShow"></Gnotice>
     <!-- 底部tab -->
     <div class="g-tab">
       <navigator class="item">
@@ -164,8 +167,9 @@ import VideoSwiper from '@/components/VideoSwiper.vue' // 视频轮播
 import PriceWrap from '@/components/GoodShowPrice.vue' // 价格块
 import GoodsShowInfo from '@/components/GoodsShowInfo.vue' // 商品信息弹窗
 import GoodsShowCoupon from '@/components/GoodsShowCoupon.vue' // 领券弹窗
-import GoodsShowEnsure from '../../components/GoodsShowEnsure.vue' // 保障弹窗
-import GoodsShowParameter from '../../components/GoodsShowParameter.vue' // 保障弹窗
+import GoodsShowEnsure from '@/components/GoodsShowEnsure.vue' // 保障弹窗
+import GoodsShowParameter from '@/components/GoodsShowParameter.vue' // 保障弹窗
+import Gnotice from '@/components/Gnotice.vue' // notice-bar
 
 export default {
   data () {
@@ -173,7 +177,8 @@ export default {
       istrue: false, // 触发商品信息弹窗
       iscoupon: false, // 触发领券弹窗
       isensure: false, // 触发保障弹窗
-      isparameter: false // 触发产品参数弹窗
+      isparameter: false, // 触发产品参数弹窗
+      isnotice: true // notice-bar 默认打开
     }
   },
   components: {
@@ -183,7 +188,8 @@ export default {
     GoodsShowInfo,
     GoodsShowCoupon,
     GoodsShowEnsure,
-    GoodsShowParameter
+    GoodsShowParameter,
+    Gnotice
   },
   methods: {
     openParameter () {
@@ -210,6 +216,9 @@ export default {
     },
     isShow () { // 父传子方法，商品信息隐藏
       this.istrue = false
+    },
+    isNoticeShow () { // 父传子方法，notice-bar隐藏
+      this.isnotice = false
     }
   },
   created () {
@@ -227,6 +236,11 @@ page {
   background-color: #eee;
 }
 .goods-show {
+  .g-notice {
+    position: fixed;
+    bottom: 126rpx;
+    left: 0;
+  }
   .divider-wrap {
     padding: 0 60rpx;
   }
