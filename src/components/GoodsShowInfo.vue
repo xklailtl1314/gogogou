@@ -12,7 +12,7 @@
                 <div class="price-wrapper">
                   <span class="old"><small>￥</small>299</span>
                   <label>券后</label>
-                  <span class="new"><small>￥</small>279</span>
+                  <span class="new"><small>￥</small>{{price}}</span>
                 </div>
                 <div class="stock">库存79件</div>
                 <div class="info">配送至：杨浦区，已选“XS(160/80A)” “白色”</div>
@@ -66,7 +66,7 @@
             </div>
             <div class="b">
               <p  class="tip">当前商品可使用<span>满299减20</span>店铺优惠券</p>
-              <button class="g-submit">确定</button>
+              <button class="g-submit" @click="addToShopCar">确定</button>
             </div>
           </div>
         </view>
@@ -89,12 +89,25 @@ export default {
         { name: '黑色', value: '2', checked: false },
         { name: '蓝色', value: '3', checked: false }
       ],
-      num: 1,
+      // num: 1,
       minusStatus: 'disabled'
     }
   },
-  props: ['istrue'],
+  props: ['istrue', 'num', 'price', 'id'],
   methods: {
+    addToShopCar () { // 添加到购物车
+      var goodsinfo = {
+        id: this.id,
+        count: this.num,
+        price: this.price,
+        selected: true
+      }
+      // 添加到购物车
+      this.$store.commit('addToCar', goodsinfo)
+
+      this.num = 1
+      this.$emit('isShow') // 调用父方法，关闭half-screen
+    },
     closeDialog () {
       this.$emit('isShow') // 调用父方法，关闭half-screen
     },
@@ -110,11 +123,9 @@ export default {
       })
       this.radioItems = radioItems
     },
-    // 数量加减--减号
-    bindMinus () {
+    bindMinus () { // 数量加减--减号
       var num = this.num
-      // 如果大于1时，才可以减
-      if (num > 1) {
+      if (num > 1) { // 如果大于1时，才可以减
         num--
       }
       // 只有大于一件的时候，才能normal状态，否则disable状态
@@ -122,25 +133,25 @@ export default {
       // 将数值与状态写回
       this.num = num
       this.minusStatus = minusStatus
+      // console.log(num)
     },
-    // 数量加减--加号
-    bindPlus () {
+    bindPlus () { // 数量加减--加号
       var num = this.num
-      // 不作过多考虑自增1
-      num++
+      num++ // 不作过多考虑自增1
       // console.log(typeof (num))
-
       // 只有大于一件的时候，才能normal状态，否则disable状态
       var minusStatus = num < 1 ? 'disabled' : 'normal'
       // 将数值与状态写回
       this.num = num
       this.minusStatus = minusStatus
+      // console.log(this.num)
     },
     // 数量加减--输入框
     bindManual (e) {
       var num = e.mp.detail.value
       // 将数值与状态写回
       this.num = num
+      // console.log(this.num)
     }
   },
   components: {
