@@ -148,7 +148,7 @@ export default {
       })
       util.request(api.HomeInfo).then(res => {
         if (res.status == 200) {
-          console.log(res.jtxx.content)
+          // console.log(res.jtxx.content)
           this.goodsList = res.jtxx // 好物精选
         }
       })
