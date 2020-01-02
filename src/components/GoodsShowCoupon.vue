@@ -64,7 +64,7 @@ export default {
   },
   computed: {
     useCoupon () {
-      console.log('12345')
+      // console.log('12345')
       this.isUse = true
       return this.isUse
     }

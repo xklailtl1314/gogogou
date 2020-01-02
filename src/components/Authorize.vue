@@ -41,7 +41,7 @@ export default {
     handleGetUserInfo () {
       wx.getUserInfo({
         success: (res) => {
-          console.log(res)
+          // console.log(res)
           this.userInfo = res.userInfo
           wx.setStorageSync('userInfo', res.userInfo) // 授权数据存本地
         },
