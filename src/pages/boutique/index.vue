@@ -84,6 +84,9 @@
         </div>
       </div>
     </div>
+
+    <!-- 授权弹窗 -->
+    <Authorize :isauthorize="isauthorize" @isAuthorize="isAuthorize"></Authorize>
   </div>
 </template>
 
@@ -95,9 +98,11 @@ import Slogin from '@/components/Slogin.vue' // 广告标语
 import Swiper from '@/components/Swiper.vue' // 轮播
 import Category from '@/components/Category.vue' // 分类
 import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
+import Authorize from '../../components/Authorize.vue' // 授权弹窗
 export default {
   data () {
     return {
+      isauthorize: false, // 触发用户授权弹窗
       goodsList: {}, // 好物精选
       showUrl: '../goodsShow/main', // 商品详情
       cur: 0, // tab切换初始值
@@ -125,7 +130,8 @@ export default {
     Slogin,
     Swiper,
     Category,
-    TwoColGoods
+    TwoColGoods,
+    Authorize
   },
   methods: {
     getPageInfo () {
@@ -142,10 +148,25 @@ export default {
           this.goodsList = res.jtxx // 好物精选
         }
       })
+    },
+    isAuthorize () { // 父传子方法，用户授权隐藏
+      this.isauthorize = false
+    },
+    openAuthorize () { // 用户授权显示
+      this.isauthorize = true
+      console.log('用户授权显示')
+    },
+    ifLogin () { // 判断用户是否授权
+      if (wx.getStorageSync('userInfo')) {
+        this.isAuthorize() // 授权弹窗隐藏
+      } else {
+        this.openAuthorize() // 授权弹窗
+      }
     }
   },
   created () {
     this.getPageInfo()
+    this.ifLogin() // 判断用户是否授权
   }
 }
 </script>
