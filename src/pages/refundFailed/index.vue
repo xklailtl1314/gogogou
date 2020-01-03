@@ -1,4 +1,5 @@
 <template>
+  <!-- 退款--失败 -->
   <div class="refund-failed">
     <!-- 退款头部 -->
     <refundHeader :refundMsg="refundMsg" :refundIcon="refundIcon"></refundHeader>
