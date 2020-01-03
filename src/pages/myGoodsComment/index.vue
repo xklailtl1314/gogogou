@@ -26,9 +26,6 @@
               </div>
             </block>
           </div>
-          <!-- <div class="weui-uploader__input-box">
-            <div class="weui-uploader__input" @click="chooseImage">123</div>
-          </div> -->
           <div class="g-uploader-box" @click="chooseImage">
             <i class="iconfont icon-camera"></i>
             <span class="name">添加图片</span>
@@ -165,11 +162,6 @@ export default {
         }
       }
     }
-    // .weui-uploader__input-box {
-    //   margin-right: 0;
-    //   width: 130rpx;
-    //   height: 130rpx;
-    // }
     .g-uploader-box {
       display: flex;
       align-items: center;
