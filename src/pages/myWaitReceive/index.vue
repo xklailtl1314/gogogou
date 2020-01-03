@@ -7,7 +7,6 @@
         <i class="iconfont icon-wuliu"></i>
         <div class="wrap">
           <span class="tit">等待商家发货</span>
-          <!-- <span class="sub">请于29分42秒内付款，超时订单将自动关闭</span> -->
         </div>
       </div>
       <div class="bottom">
