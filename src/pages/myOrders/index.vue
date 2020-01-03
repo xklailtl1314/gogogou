@@ -24,7 +24,7 @@
             </div>
             <span class="order-num">订单编号：EF201912055521492158129</span>
             <div class="order-item">
-              <img src="/static/images/ad.jpg">
+              <img src="/static/tmp/b005.jpg">
               <div class="m">
                 <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
                 <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
@@ -65,7 +65,7 @@
             </div>
             <span class="order-num">订单编号：EF201912055521492158129</span>
             <navigator class="order-item" hover-class="none" url="../myOrdersWaitPay/main">
-              <img src="/static/images/ad.jpg">
+              <img src="/static/tmp/b005.jpg">
               <div class="m">
                 <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
                 <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
@@ -119,7 +119,7 @@
             </div>
             <span class="order-num">订单编号：EF201912055521492158129</span>
             <div class="order-item" @click="goToWaitShip">
-              <img src="/static/images/ad.jpg">
+              <img src="/static/tmp/b005.jpg">
               <div class="m">
                 <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
                 <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
@@ -154,7 +154,7 @@
             </div>
             <span class="order-num">订单编号：EF201912055521492158129</span>
             <div class="order-item" @click="goToWaitRecive">
-              <img src="/static/images/ad.jpg">
+              <img src="/static/tmp/b005.jpg">
               <div class="m">
                 <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
                 <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
@@ -189,7 +189,7 @@
             </div>
             <span class="order-num">订单编号：EF201912055521492158129</span>
             <div class="order-item" @click="goToWaitRecive">
-              <img src="/static/images/ad.jpg">
+              <img src="/static/tmp/b005.jpg">
               <div class="m">
                 <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
                 <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
@@ -205,12 +205,13 @@
             </div>
             <div class="bottom">
               <span class="cancel" @click="goToLogistics">查看物流</span>
-              <span class="submit">评价商品</span>
+              <span class="submit" @click="goToComment">评价商品</span>
             </div>
           </div>
         </div>
         <!-- 退款/售后 -->
         <div v-show="cur==5">
+          <!-- 审核中 -->
           <div class="shop">
             <div class="top">
               <div class="left">
@@ -224,7 +225,7 @@
             </div>
             <span class="order-num">订单编号：EF201912055521492158129</span>
             <div class="order-item" @click="goToWaitRecive">
-              <img src="/static/images/ad.jpg">
+              <img src="/static/tmp/b005.jpg">
               <div class="m">
                 <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
                 <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
@@ -238,10 +239,122 @@
               <span>退款金额：</span>
               <span class="r">￥6.9</span>
             </div>
-            <!-- <div class="bottom">
-              <span class="cancel" @click="goToLogistics">查看物流</span>
-              <span class="submit">评价商品</span>
-            </div> -->
+          </div>
+          <!-- 审核失败 -->
+          <div class="shop">
+            <div class="top">
+              <div class="left">
+                <img src="/static/images/g-icon2.png">
+                <span>雷蛇官方旗舰店</span>
+                <i class="iconfont icon-angle-right"></i>
+              </div>
+              <div class="right">
+                <span>审核失败</span>
+              </div>
+            </div>
+            <span class="order-num">订单编号：EF201912055521492158129</span>
+            <div class="order-item" @click="goToWaitRecive">
+              <img src="/static/tmp/b005.jpg">
+              <div class="m">
+                <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
+                <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
+              </div>
+              <div class="r">
+                <span class="t">¥ 299.00</span>
+                <span class="b">x1</span>
+              </div>
+            </div>
+            <div class="total">
+              <span>退款金额：</span>
+              <span class="r">￥6.9</span>
+            </div>
+          </div>
+          <!-- 审核成功 -->
+          <div class="shop">
+            <div class="top">
+              <div class="left">
+                <img src="/static/images/g-icon2.png">
+                <span>雷蛇官方旗舰店</span>
+                <i class="iconfont icon-angle-right"></i>
+              </div>
+              <div class="right">
+                <span>审核成功</span>
+              </div>
+            </div>
+            <span class="order-num">订单编号：EF201912055521492158129</span>
+            <div class="order-item" @click="goToWaitRecive">
+              <img src="/static/tmp/b005.jpg">
+              <div class="m">
+                <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
+                <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
+              </div>
+              <div class="r">
+                <span class="t">¥ 299.00</span>
+                <span class="b">x1</span>
+              </div>
+            </div>
+            <div class="total">
+              <span>退款金额：</span>
+              <span class="r">￥6.9</span>
+            </div>
+          </div>
+          <!-- 退款中 -->
+          <div class="shop">
+            <div class="top">
+              <div class="left">
+                <img src="/static/images/g-icon2.png">
+                <span>雷蛇官方旗舰店</span>
+                <i class="iconfont icon-angle-right"></i>
+              </div>
+              <div class="right">
+                <span>退款中</span>
+              </div>
+            </div>
+            <span class="order-num">订单编号：EF201912055521492158129</span>
+            <div class="order-item" @click="goToWaitRecive">
+              <img src="/static/tmp/b005.jpg">
+              <div class="m">
+                <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
+                <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
+              </div>
+              <div class="r">
+                <span class="t">¥ 299.00</span>
+                <span class="b">x1</span>
+              </div>
+            </div>
+            <div class="total">
+              <span>退款金额：</span>
+              <span class="r">￥6.9</span>
+            </div>
+          </div>
+          <!-- 退款完成 -->
+          <div class="shop">
+            <div class="top">
+              <div class="left">
+                <img src="/static/images/g-icon2.png">
+                <span>雷蛇官方旗舰店</span>
+                <i class="iconfont icon-angle-right"></i>
+              </div>
+              <div class="right">
+                <span>退款完成</span>
+              </div>
+            </div>
+            <span class="order-num">订单编号：EF201912055521492158129</span>
+            <div class="order-item" @click="goToWaitRecive">
+              <img src="/static/tmp/b005.jpg">
+              <div class="m">
+                <span class="t">Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥</span>
+                <span class="b">皮卡丘鼠标+皮卡丘鼠标垫 套装；官方标配</span>
+              </div>
+              <div class="r">
+                <span class="t">¥ 299.00</span>
+                <span class="b">x1</span>
+              </div>
+            </div>
+            <div class="total">
+              <span>退款金额：</span>
+              <span class="r">￥6.9</span>
+            </div>
           </div>
         </div>
       </div>
@@ -259,6 +372,11 @@ export default {
     }
   },
   methods: {
+    goToComment () { // 商品评价
+      wx.navigateTo({
+        url: '../myGoodsComment/main'
+      })
+    },
     goToLogistics () { // 待收货-查看物流
       wx.navigateTo({
         url: '../myOrdersLogistics/main'
