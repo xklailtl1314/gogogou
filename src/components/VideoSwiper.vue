@@ -52,10 +52,7 @@ export default {
   data () {
     return {
       imgUrls: [
-        '/static/tmp/b005.jpg',
-        '/static/tmp/b006.jpeg',
-        '/static/tmp/b007.jpeg',
-        '/static/tmp/b008.jpeg'
+        '/static/tmp/b005.jpg'
       ],
       indicatorDots: false,
       autoplay: false,

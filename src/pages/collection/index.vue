@@ -45,7 +45,7 @@ export default {
       goodsList: [ // 收藏列表
         {
           id: 1,
-          img_src: '/static/tmp/b007.jpeg',
+          img_src: '/static/tmp/b005.jpg',
           title: 'Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥',
           sub: 278,
           tip: '比收藏时降价3.00元',

@@ -104,7 +104,7 @@
           <span>衣服不错，特别好看又舒服。从衣服设计上来说，图案本身就不错，很有吸引力，看着比较舒服，反正我超...</span>
           <div class="img-wrap">
             <img src="/static/tmp/b005.jpg">
-            <img src="/static/tmp/b006.jpeg">
+            <img src="/static/tmp/b005.jpg">
           </div>
         </div>
         <div class="bottom">

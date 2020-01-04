@@ -104,14 +104,14 @@ export default {
       goodsArr: [ // 商品列表
         {
           id: 1,
-          img: '/static/tmp/b007.jpeg',
+          img: '/static/tmp/b005.jpg',
           name: 'Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥',
           price: '6.9',
           type: 0
         },
         {
           id: 2,
-          img: '/static/tmp/b006.jpeg',
+          img: '/static/tmp/b005.jpg',
           name: 'Razer 雷蛇|宝可梦 皮卡丘限定款鼠标+鼠标垫套装科奥',
           price: '6.9',
           type: 0
