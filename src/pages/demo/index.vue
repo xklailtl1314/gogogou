@@ -24,7 +24,6 @@
 export default {
   data () {
     return {
-      userInfo: {},
       commitInfo: [
         {
           img: 'http://img3.imgtn.bdimg.com/it/u=3067730600,935028889&fm=27&gp=0.jpg',
@@ -47,7 +46,7 @@ export default {
   },
 
   methods: {
-  // 滑动开始
+    // 滑动开始
     touchStart (e) {
       // 获取移动距离，可以通过打印出e，然后分析e的值得出
       // console.log(e.mp.changedTouches[0])
@@ -61,6 +60,7 @@ export default {
         for (let i = 0; i < this.commitInfo.length; i++) {
           this.commitInfo[i].type = 0
         }
+        console.log(index)
         this.commitInfo[index].type = 1
       } else if (this.startX - this.endX < -10) {
         for (let i = 0; i < this.commitInfo.length; i++) {
@@ -124,6 +124,7 @@ export default {
         width: 80rpx;
         height: 150rpx;
         background-color: lightblue;
+      }
       .delect {
         width: 240rpx;
         height: 150rpx;
@@ -132,7 +133,6 @@ export default {
         font-size: 34rpx;
         text-align: center;
       }
-    }
   }
 }
   li[data-type="0"] {
