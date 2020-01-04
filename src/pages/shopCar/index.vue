@@ -246,17 +246,15 @@ export default {
         flex-direction: column;
         li.order-item {
           padding-bottom: 10rpx;
-          width: 990rpx;
-
           display: flex;
+          width: 990rpx;
           background-color: #fcfcfc;
           -webkit-transition: all 0.2s;
           transition: all 0.2s;
           .radio-group {
             margin-left: 20rpx;
-            width: 40rpx;
-
             display: flex;
+            width: 40rpx;
             align-items: center;
             .radio {}
           }
@@ -380,7 +378,6 @@ export default {
           transform: translate3d(0, 0, 0);
         }
         li[data-type="1"] {
-          // transform: translate3d(-400rpx, 0, 0);
           transform: translate3d(-300rpx, 0, 0);
         }
 
