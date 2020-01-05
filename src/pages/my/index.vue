@@ -29,7 +29,7 @@
           </navigator>
         </div>
         <div class="step">
-          <navigator class="item" v-for="(item, idx) in oList" :key="idx">
+          <navigator class="item" v-for="(item, idx) in oList" :key="idx" :url="item.url">
             <img :src="item.img_src">
             <span>{{item.name}}</span>
           </navigator>
@@ -63,11 +63,11 @@ export default {
     return {
       userInfo: {}, // 用户头像
       oList: [ // 我的订单
-        {img_src: '/static/images/icon_01.png', name: '待付款'},
-        {img_src: '/static/images/icon_02.png', name: '待发货'},
-        {img_src: '/static/images/icon_03.png', name: '待收货'},
-        {img_src: '/static/images/icon_04.png', name: '待评价'},
-        {img_src: '/static/images/icon_05.png', name: '退款/售后'}
+        {img_src: '/static/images/icon_01.png', name: '待付款', url: '../myOrders/main?cur=1'},
+        {img_src: '/static/images/icon_02.png', name: '待发货', url: '../myOrders/main?cur=2'},
+        {img_src: '/static/images/icon_03.png', name: '待收货', url: '../myOrders/main?cur=3'},
+        {img_src: '/static/images/icon_04.png', name: '待评价', url: '../myOrders/main?cur=4'},
+        {img_src: '/static/images/icon_05.png', name: '退款/售后', url: '../myOrders/main?cur=5'}
       ],
       oToolList: [ // 我的工具
         {img_src: '/static/images/icon_06.png', name: '优惠券', link: '../myCoupon/main'},

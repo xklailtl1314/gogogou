@@ -371,6 +371,12 @@ export default {
       oContent: []
     }
   },
+  onLoad (e) {
+    // console.log(e)
+    if (e.cur) {
+      this.cur = e.cur
+    }
+  },
   methods: {
     goToComment () { // 商品评价
       wx.navigateTo({
