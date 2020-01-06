@@ -3,6 +3,8 @@
     <div class="wrap">
       <i class="iconfont icon-search1"></i>
       <input
+        focus="true"
+        autofocus
         type="text"
         :placeholder="oPlaceholder"
         placeholder-style="color: #666"
@@ -16,11 +18,15 @@
 <script>
 export default {
   props: ['oText', 'oPlaceholder'],
+  data () {
+    return {}
+  },
   methods: {
     clearSearch () { // 清除输入框搜索
       this.oText = ''
     }
-  }
+  },
+  created () {}
 }
 </script>
 
