@@ -1,7 +1,17 @@
 <template>
   <div class="search-list">
     <!-- 搜素框 -->
-    <Search :oText="oText" :oPlaceholder="oPlaceholder"></Search>
+    <!-- 点击返回搜索页面 -->
+    <navigator :url="cateLink" class="search-wrap" hover-class="none">
+      <div class="search">
+        <div class="left">
+          <i class="iconfont icon-search1"></i>
+          <span>轮胎</span>
+        </div>
+        <i class="iconfont icon-quxiao"></i>
+      </div>
+    </navigator>
+
     <!-- 筛选 -->
     <div class="screenTab">
       <div class="tab-title">
@@ -42,6 +52,8 @@ import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
 export default {
   data () {
     return {
+      pageindex: 1, // 分页
+      cateLink: '../search/main', // 搜索页
       angleActive: true,
       oText: '', // 搜索组件传搜索值
       oPlaceholder: '', // 搜索框placeholder
@@ -70,10 +82,17 @@ export default {
   },
   methods: {
     getSearchResult () { // 获取列表
-      util.request(api.SearchResult).then(res => {
-        // console.log(res)
-        if (res.status == 200) {
-          this.twoColGoods = res.content
+      // util.request(api.SearchResult).then(res => {
+      //   if (res.status == 200) {
+      //     this.twoColGoods = res.content
+      //   }
+      // })
+      wx.request({
+        url: 'http://www.liulongbin.top:3005/api/getgoods?pageindex=' + this.pageindex,
+        success (res) {
+          if (res.data.status === 0) {
+            // this.twoColGoods = res.data.message
+          }
         }
       })
     },
@@ -105,6 +124,39 @@ export default {
 <style lang="scss">
 page {
   background-color: #eee;
+}
+.search-wrap {
+  padding: 0 30rpx;
+  display: flex;
+  box-sizing: border-box;
+  .search {
+    display: flex;
+    align-items: center;
+    height: 70rpx;
+    width: 100%;
+    border-radius: 35rpx;
+    background-color: #eee;
+    .iconfont {
+      display: flex;
+      justify-content: center;
+      font-size: 22rpx;
+      color: #666;
+      &.icon-search1 {
+        width: 80rpx;
+      }
+      &.icon-quxiao {
+        width: 80rpx;
+      }
+    }
+    .left {
+      display: flex;
+      flex: 1;
+    }
+    span {
+      font-size: 26rpx;
+      color: #333;
+    }
+  }
 }
 .screenTab {
   .tab-title {
