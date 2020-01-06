@@ -6,7 +6,7 @@
       <div class="search">
         <div class="left">
           <i class="iconfont icon-search1"></i>
-          <span>轮胎</span>
+          <span>{{oText}}</span>
         </div>
         <i class="iconfont icon-quxiao"></i>
       </div>
