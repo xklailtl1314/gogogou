@@ -267,7 +267,8 @@ export default {
           }
           .m {
             width: 396rpx;
-            margin: 0 20rpx;
+            // margin: 0 20rpx;
+            margin: 0 26rpx;
             display: flex;
             flex-direction: column;
             // flex: 1;
