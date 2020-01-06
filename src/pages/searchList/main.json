@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "咕咕购商城"
+  "navigationBarTitleText": "咕咕购商城",
+  "enablePullDownRefresh": true
 }
