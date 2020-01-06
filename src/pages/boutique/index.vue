@@ -307,7 +307,7 @@ export default {
     getPageInfo () {
       // console.log(api.Boutique)
       util.request(api.Boutique).then(res => {
-        console.log(res)
+        // console.log(res)
         if (res.status == 200) {
           this.hhdk = res.data.hhdk
           this.ad = res.data.ad
