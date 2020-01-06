@@ -270,7 +270,7 @@ page {
 .goods-show {
   .g-notice {
     position: fixed;
-    bottom: 126rpx;
+    bottom: 124rpx;
     left: 0;
   }
   .divider-wrap {
