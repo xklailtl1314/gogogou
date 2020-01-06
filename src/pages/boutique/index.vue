@@ -305,7 +305,7 @@ export default {
   },
   methods: {
     getPageInfo () {
-      console.log(api.Boutique)
+      // console.log(api.Boutique)
       util.request(api.Boutique).then(res => {
         console.log(res)
         if (res.status == 200) {
