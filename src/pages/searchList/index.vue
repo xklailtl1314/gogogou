@@ -32,6 +32,18 @@
       <div class="tab-content">
         <div v-show="cur==0">
           <TwoColGoods :twoColGoods="twoColGoods"></TwoColGoods>
+          <!-- 加载更多 -->
+          <div class="laodMore">
+            <div v-show="logStatus === 0">
+              <div>上拉加载</div>
+            </div>
+            <div v-show="logStatus === 1">
+              <div>正在加载</div>
+            </div>
+            <div v-show="logStatus === 2">
+              <div>没有更多数据了</div>
+            </div>
+          </div>
         </div>
         <div v-show="cur==1">
           <TwoColGoods :twoColGoods="twoColGoods"></TwoColGoods>
@@ -53,6 +65,8 @@ export default {
   data () {
     return {
       pageindex: 1, // 分页
+      logStatus: 0, // 加载状态
+
       cateLink: '../search/main', // 搜索页
       angleActive: true,
       oText: '', // 搜索组件传搜索值
@@ -80,6 +94,9 @@ export default {
       ]
     }
   },
+  onReachBottom () { // 上拉加载，拉到底部触发
+    this.onScroll()
+  },
   methods: {
     getSearchResult () { // 获取列表
       // util.request(api.SearchResult).then(res => {
@@ -89,12 +106,29 @@ export default {
       // })
       wx.request({
         url: 'http://www.liulongbin.top:3005/api/getgoods?pageindex=' + this.pageindex,
-        success (res) {
+        success: res => {
           if (res.data.status === 0) {
-            // this.twoColGoods = res.data.message
+            // console.log(res.data.message)
+            this.twoColGoods = this.twoColGoods.concat(res.data.message)
           }
         }
       })
+    },
+    onScroll () { // 上拉加载
+      this.logStatus = 1
+      if (this.noData === true) {
+        return false
+      }
+      setTimeout(() => {
+        this.getSearchResult()
+        if (this.twoColGoods.length < 26) {
+          this.pageindex = this.pageindex + 1
+          this.logStatus = 1
+        } else {
+          this.logStatus = 2
+          this.noData = true
+        }
+      }, 500)
     },
     saleChange () { // 销量降序
       this.twoColGoods.sort((a, b) => {
@@ -125,9 +159,21 @@ export default {
 page {
   background-color: #eee;
 }
+// 上拉加载
+.laodMore {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #ccc;
+  text-align: center;
+}
 .search-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
   padding: 0 30rpx;
   display: flex;
+  width: 100%;
   box-sizing: border-box;
   .search {
     display: flex;
@@ -159,6 +205,7 @@ page {
   }
 }
 .screenTab {
+  padding-top: 70rpx;
   .tab-title {
     padding: 20rpx 30rpx;
     display: flex;
