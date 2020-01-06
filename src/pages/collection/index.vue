@@ -117,7 +117,7 @@ page {
     li.goods-list {
       margin: 0 0 20rpx 30rpx;
       display: flex;
-      width: 820rpx;
+      width: 822rpx;
       height: 240rpx;
       -webkit-transition: all 0.2s;
       transition: all 0.2s;
