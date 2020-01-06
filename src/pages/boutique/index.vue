@@ -106,7 +106,56 @@ export default {
   data () {
     return {
       isauthorize: false, // 触发用户授权弹窗
-      goodsList: {}, // 好物精选
+      goodsList: {
+        title: '好物精选',
+        content: [
+          {
+            'id': 6,
+            'img_src': '@image(334x334)',
+            'title': '日清合味道方便面整箱12杯开杯乐海鲜杯面泡面桶装速食刀剑神域',
+            'price': '9.9',
+            'oldPrice': '12',
+            'saleNum': '200',
+            'tip': '新品'
+          },
+          {
+            'id': 7,
+            'img_src': '@image(334x334)',
+            'title': '2019秋冬女装春装新款上衣连衣裙加绒加厚打底衫女长袖衬衫t恤女',
+            'price': '9.9',
+            'oldPrice': '12',
+            'saleNum': '200',
+            'tip': '满减'
+          },
+          {
+            'id': 8,
+            'img_src': '@image(334x334)',
+            'title': '2019秋冬女装春装新款上衣连衣裙加绒加厚打底衫女长袖衬衫t恤女',
+            'price': '9.9',
+            'oldPrice': '12',
+            'saleNum': '200',
+            'tip': '满减'
+          },
+          {
+            'id': 9,
+            'img_src': '@image(334x334)',
+            'title': 'Amazfit GTS 智能手表 华米户外GPS跑步游泳运动健康男女多功能心率防水手环苹果安卓支付watch',
+            'price': '9.9',
+            'oldPrice': '12',
+            'saleNum': '200',
+            'tip': '新品'
+          },
+          {
+            'id': 10,
+            'img_src': '@image(334x334)',
+            'title': 'LOFREE/洛斐 糖豆计算器 财务办公可爱女时尚个性创意迷你小号便携机械键盘青轴打字机复古打字机洛菲',
+            'price': '9.9',
+            'oldPrice': '12',
+            'saleNum': '200',
+            'tip': '新品'
+          }
+        ]
+      }, // 好物精选
       // showUrl: '../goodsShow/main', // 商品详情
       cur: 0, // tab切换初始值
       msgLink: '../myMessage/main', // 头部导航链接-消息
@@ -123,9 +172,126 @@ export default {
         { img_src: '/static/images/jx04.png', name: '美妆个护', link: '../goodsList/main' },
         { img_src: '/static/images/jx05.png', name: '天天进博', link: '../goodsList/main' }
       ],
-      hhdk: {}, // 好货档口
+      hhdk: {
+        'title': '好货档口',
+        'sub': '发现世间好物',
+        'videoList': [
+          {
+            'img_src': '@image(642x390)',
+            'num': 365,
+            'title': '一只鼎醉蟹蟹股金牌美味组合',
+            'avatar': '@image(80x80)',
+            'startTime': '12月02日 13:51',
+            'endTime': '12月02日 14:40',
+            'total': 35000
+          },
+          {
+            'img_src': '@image(310x186)',
+            'num': 365,
+            'title': '一只鼎醉蟹蟹股金牌美味组合',
+            'avatar': '@image(80x80)',
+            'startTime': '12月02日 13:51',
+            'endTime': '12月02日 14:40',
+            'total': 35000
+          },
+          {
+            'img_src': '@image(310x186)',
+            'num': 365,
+            'title': '一只鼎醉蟹蟹股金牌美味组合',
+            'avatar': '@image(80x80)',
+            'startTime': '12月02日 13:51',
+            'endTime': '12月02日 14:40',
+            'total': 35000
+          }
+        ]
+      }, // 好货档口
       ad: '', // 广告占位图
-      twoCol: []
+      twoCol: [
+        {
+          'title': '边看边买',
+          'sub': '网红新推荐',
+          'list': [
+            {
+              'live': true,
+              'img_src': '@image(335x470)',
+              'num': 365,
+              'title': '一只鼎醉蟹蟹股金牌美味组合',
+              'avatar': '@image(80x80)',
+              'name': '张三',
+              'total': 35000
+            },
+            {
+              'live': true,
+              'img_src': '@image(335x470)',
+              'num': 365,
+              'title': '一只鼎醉蟹蟹股金牌美味组合',
+              'avatar': '@image(80x80)',
+              'name': '李四',
+              'total': 35000
+            },
+            {
+              'live': true,
+              'img_src': '@image(335x470)',
+              'num': 365,
+              'title': '一只鼎醉蟹蟹股金牌美味组合',
+              'avatar': '@image(80x80)',
+              'name': '王五',
+              'total': 35000
+            },
+            {
+              'live': true,
+              'img_src': '@image(335x470)',
+              'num': 365,
+              'title': '一只鼎醉蟹蟹股金牌美味组合',
+              'avatar': '@image(80x80)',
+              'name': '赵六',
+              'total': 35000
+            }
+          ]
+        },
+        {
+          'title': '好物精选',
+          'sub': '90天低价',
+          'list': [
+            {
+              'live': true,
+              'img_src': '@image(335x470)',
+              'num': 365,
+              'title': '一只鼎醉蟹蟹股金牌美味组合',
+              'avatar': '@image(80x80)',
+              'name': 'Jerry',
+              'total': 35000
+            },
+            {
+              'live': true,
+              'img_src': '@image(335x470)',
+              'num': 365,
+              'title': '一只鼎醉蟹蟹股金牌美味组合',
+              'avatar': '@image(80x80)',
+              'name': 'Tom',
+              'total': 35000
+            },
+            {
+              'live': true,
+              'img_src': '@image(335x470)',
+              'num': 365,
+              'title': '一只鼎醉蟹蟹股金牌美味组合',
+              'avatar': '@image(80x80)',
+              'name': 'Helun',
+              'total': 35000
+            },
+            {
+              'live': true,
+              'img_src': '@image(335x470)',
+              'num': 365,
+              'title': '一只鼎醉蟹蟹股金牌美味组合',
+              'avatar': '@image(80x80)',
+              'name': 'Roy',
+              'total': 35000
+            }
+          ]
+        }
+      ]
     }
   },
   components: {
@@ -139,7 +305,9 @@ export default {
   },
   methods: {
     getPageInfo () {
+      console.log(api.Boutique)
       util.request(api.Boutique).then(res => {
+        console.log(res)
         if (res.status == 200) {
           this.hhdk = res.data.hhdk
           this.ad = res.data.ad
