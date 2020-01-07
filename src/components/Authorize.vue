@@ -91,7 +91,8 @@ export default {
         .iconfont {
           padding: 14rpx;
           font-size: 24rpx;
-          color: #ccc;
+          // color: #ccc;
+          color: transparent;
         }
       }
       .line {
