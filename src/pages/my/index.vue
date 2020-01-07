@@ -61,6 +61,7 @@ import TwoColGoods from '@/components/TwoColGoods.vue' // 两列商品布局
 export default {
   data () {
     return {
+      isUserInfo: false,
       userInfo: {}, // 用户头像
       oList: [ // 我的订单
         {img_src: '/static/images/icon_01.png', name: '待付款', url: '../myOrders/main?cur=1'},
@@ -103,11 +104,10 @@ export default {
     getUserInfo () { // 获取用户信息
       if (wx.getStorageSync('userInfo')) {
         this.userInfo = wx.getStorageSync('userInfo')
-        // console.log(this.userInfo)
       }
     }
   },
-  created () {
+  onShow () {
     this.getUserInfo() // 获取用户信息
   }
 
