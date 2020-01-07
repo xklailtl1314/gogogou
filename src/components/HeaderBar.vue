@@ -10,9 +10,9 @@
     </navigator>
 
     <div class="right">
-      <div class="scan" hover-class="none" @tap="sacnCode">
+      <!-- <div class="scan" hover-class="none" @tap="sacnCode">
         <i class="iconfont icon-scan"></i>
-      </div>
+      </div> -->
       <navigator class="msg" hover-class="none" :url="msgLink">
         <i class="iconfont icon-i-message"></i>
       </navigator>
@@ -25,16 +25,16 @@ export default {
   props: ['cateLink', 'cates', 'msgLink'],
   methods: {
     // 扫一扫
-    sacnCode () {
-      wx.scanCode({
-        success (res) {
-          console.log(res)
-        },
-        fail () {
-          console.log('失败')
-        }
-      })
-    }
+    // sacnCode () {
+    //   wx.scanCode({
+    //     success (res) {
+    //       console.log(res)
+    //     },
+    //     fail () {
+    //       console.log('失败')
+    //     }
+    //   })
+    // }
   }
 }
 </script>
@@ -75,7 +75,10 @@ export default {
     }
     .search {
       position: relative;
-      width: 480rpx;
+      // width: 480rpx;
+      margin-left: 20rpx;
+      display: flex;
+      flex: 1;
       height: 72rpx;
       border-radius: 36rpx;
       background-color: #eee;
